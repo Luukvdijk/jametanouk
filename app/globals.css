@@ -152,16 +152,6 @@ header {
 
 main { max-width: 44rem; }
 
-.kicker {
-  font-size: 0.7rem;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  color: var(--rose);
-  margin-bottom: clamp(1.1rem, 2.2vw, 1.8rem);
-  animation: fadeUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) both;
-  animation-delay: 0.45s;
-}
-
 h1 {
   font-family: var(--serif);
   font-weight: 340;
@@ -346,7 +336,6 @@ footer {
 @media (max-height: 640px) {
   h1 { font-size: clamp(2.4rem, 6.5vh, 4.6rem); }
   .quote { font-size: 1rem; line-height: 1.5; }
-  .kicker { margin-bottom: 0.9rem; }
   .rule { margin: 1.2rem 0; }
 }
 

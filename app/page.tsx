@@ -27,7 +27,6 @@ export default function Home() {
         </header>
 
         <main>
-          <p className="kicker">Liefdesverhaal, oprecht verteld</p>
           <h1>
             <span className="line">
               <span>Binnenkort</span>
