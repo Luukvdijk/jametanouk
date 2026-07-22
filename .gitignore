@@ -1,3 +1,14 @@
-.claude/
-Thumbs.db
+/node_modules
+/.next/
+/out/
+/build
+*.tsbuildinfo
+next-env.d.ts
+
 .DS_Store
+Thumbs.db
+*.pem
+.env*.local
+
+.claude/
+.vercel
