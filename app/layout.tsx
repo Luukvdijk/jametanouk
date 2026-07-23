@@ -64,6 +64,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
             <div className="footer-contact">
               <a href="mailto:info@jametanouk.nl">info@jametanouk.nl</a>
+              <a href="tel:+31611429005">06 11 42 90 05</a>
+              <a href="https://www.instagram.com/jametanouk/" target="_blank" rel="noopener">
+                Instagram
+              </a>
             </div>
           </div>
           <div className="footer-bottom">

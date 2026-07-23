@@ -82,9 +82,13 @@ export default function Nav() {
             </Link>
           ))}
         </nav>
-        <a className="mobile-menu-mail" href="mailto:info@jametanouk.nl">
-          info@jametanouk.nl
-        </a>
+        <div className="mobile-menu-contact">
+          <a href="mailto:info@jametanouk.nl">info@jametanouk.nl</a>
+          <a href="tel:+31611429005">06 11 42 90 05</a>
+          <a href="https://www.instagram.com/jametanouk/" target="_blank" rel="noopener">
+            Instagram
+          </a>
+        </div>
       </div>
     </>
   );

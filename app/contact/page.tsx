@@ -46,10 +46,23 @@ export default async function Contact({
             </Reveal>
             <Reveal delay={100}>
               <div className="contact-detail">
-                <p className="label">Liever direct mailen?</p>
-                <a className="contact-mail" href="mailto:info@jametanouk.nl">
-                  info@jametanouk.nl
-                </a>
+                <p className="label">Liever direct contact?</p>
+                <div className="contact-lines">
+                  <a className="contact-mail" href="mailto:info@jametanouk.nl">
+                    info@jametanouk.nl
+                  </a>
+                  <a className="contact-alt" href="tel:+31611429005">
+                    06 11 42 90 05
+                  </a>
+                  <a
+                    className="contact-alt"
+                    href="https://www.instagram.com/jametanouk/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    @jametanouk
+                  </a>
+                </div>
               </div>
             </Reveal>
           </div>
