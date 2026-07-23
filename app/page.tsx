@@ -54,10 +54,10 @@ export default function Home() {
           <div className="about-media">
             <Reveal className="about-photo">
               <Image
-                src="/images/detail-jurk.jpg"
-                alt="Kanten trouwjurk tegen een muur met klimop"
-                width={900}
-                height={1188}
+                src="/images/bruidspaar.jpg"
+                alt="Bruidspaar loopt hand in hand, bruid met boeket"
+                width={1600}
+                height={1067}
                 sizes="(max-width: 900px) 86vw, 40vw"
               />
             </Reveal>
@@ -180,18 +180,36 @@ export default function Home() {
             </div>
             <Reveal className="werkwijze-media" delay={120}>
               <Image
-                src="/images/detail-raam.jpg"
-                alt="Oud raam omringd door klimop"
-                width={900}
-                height={1167}
+                src="/images/bruid-boeket.jpg"
+                alt="Bruid met een kleurrijk boeket in het gras"
+                width={1600}
+                height={1067}
+                sizes="(max-width: 900px) 86vw, 34vw"
+              />
+              <Image
+                src="/images/trouwauto.jpg"
+                alt="Klassieke rode trouwauto met wit lint"
+                width={1600}
+                height={1065}
                 sizes="(max-width: 900px) 86vw, 34vw"
               />
             </Reveal>
           </div>
 
           <Reveal className="extra-services">
-            <p className="label">Meer dan alleen een trouwceremonie</p>
-            <ul>
+            <div className="extra-grid">
+              <div className="extra-media">
+                <Image
+                  src="/images/strand-ceremonie.jpg"
+                  alt="Ceremonieopstelling op het strand met witte stoelen"
+                  width={1600}
+                  height={961}
+                  sizes="(max-width: 900px) 86vw, 30vw"
+                />
+              </div>
+              <div className="extra-body">
+                <p className="label">Meer dan alleen een trouwceremonie</p>
+                <ul>
               <li>Een persoonlijke ceremoniespreker bij een huwelijk in het buitenland.</li>
               <li>Een symbolische ceremonie na een geregistreerd partnerschap.</li>
               <li>
@@ -202,7 +220,9 @@ export default function Home() {
                 Een complete culinaire invulling van de dag via L&rsquo;Affetto, van diner tot
                 feest. Zo lopen ceremonie en gastvrijheid naadloos in elkaar over.
               </li>
-            </ul>
+                </ul>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -301,10 +321,10 @@ export default function Home() {
           </div>
           <Reveal className="culinair-media" delay={120}>
             <Image
-              src="/images/detail-schoenen.jpg"
-              alt="Kanten sleep van een trouwjurk met bruidsschoenen in het gras"
-              width={900}
-              height={636}
+              src="/images/tuinfeest.jpg"
+              alt="Bruidspaar loopt een sfeervol tuinfeest met lichtjes binnen"
+              width={1600}
+              height={1067}
               sizes="(max-width: 900px) 86vw, 44vw"
             />
           </Reveal>
