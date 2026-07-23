@@ -146,6 +146,27 @@ h2 {
 
 .arrow-link:hover::after { transform: scaleX(1); }
 
+.arrow-link-muted { color: var(--muted); }
+
+.arrow-link-muted::after { background: var(--muted); }
+
+.culinair-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.2rem;
+  align-items: baseline;
+}
+
+.inline-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(238, 147, 132, 0.5);
+  transition: color 0.35s var(--ease);
+}
+
+.inline-link:hover { color: var(--rose); }
+
 /* ---- Animations ---- */
 .rise { opacity: 0; animation: fadeUp 1.2s var(--ease) both; }
 
@@ -961,7 +982,10 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   .about-media { padding-bottom: 0; }
 
   .quote-card {
-    position: static;
+    position: relative;
+    z-index: 2;
+    left: auto;
+    bottom: auto;
     margin: -2.5rem 1.2rem 0 auto;
     max-width: 85%;
   }

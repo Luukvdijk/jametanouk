@@ -48,9 +48,12 @@ export default function OverMij() {
             <Reveal>
               <p>
                 Al jarenlang ben ik als chef-kok en event-regisseuse aanwezig op de mooiste dagen
-                uit het leven van mensen. Met mijn bedrijf L&rsquo;Affetto verzorg ik bijzondere
-                diners en bruiloften, waardoor ik van dichtbij heb meegemaakt wat een trouwdag
-                &eacute;cht bijzonder maakt. Ik weet hoe belangrijk de sfeer is, hoe spannend de
+                uit het leven van mensen. Met mijn bedrijf{" "}
+                <a href="https://l-affetto.nl/" target="_blank" rel="noopener" className="inline-link">
+                  L&rsquo;Affetto
+                </a>{" "}
+                verzorg ik bijzondere diners en bruiloften, waardoor ik van dichtbij heb
+                meegemaakt wat een trouwdag &eacute;cht bijzonder maakt. Ik weet hoe belangrijk de sfeer is, hoe spannend de
                 eerste momenten kunnen zijn en hoeveel liefde er schuilt in de kleine details.
               </p>
             </Reveal>

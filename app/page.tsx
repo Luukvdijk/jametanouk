@@ -79,9 +79,12 @@ export default function Home() {
               <p>
                 Mijn passie voor gastvrijheid en de liefde voor het meest waardevolle moment van
                 de dag komen hier samen. Al jarenlang ben ik als chef-kok en event-regisseuse
-                aanwezig op de mooiste dagen uit het leven van mensen. Met mijn bedrijf
-                L&rsquo;Affetto verzorg ik bijzondere diners en bruiloften, waardoor ik van
-                dichtbij heb meegemaakt wat een trouwdag &eacute;cht bijzonder maakt.
+                aanwezig op de mooiste dagen uit het leven van mensen. Met mijn bedrijf{" "}
+                <a href="https://l-affetto.nl/" target="_blank" rel="noopener" className="inline-link">
+                  L&rsquo;Affetto
+                </a>{" "}
+                verzorg ik bijzondere diners en bruiloften, waardoor ik van dichtbij heb
+                meegemaakt wat een trouwdag &eacute;cht bijzonder maakt.
               </p>
               <p>
                 Toch ontbrak er altijd &eacute;&eacute;n onderdeel: het JAwoord. Daarom ben ik ook
@@ -313,8 +316,16 @@ export default function Home() {
                 lopen ceremonie en gastvrijheid naadloos in elkaar over.
               </p>
             </Reveal>
-            <Reveal delay={180}>
-              <a href="#pakketten" className="arrow-link">
+            <Reveal delay={180} className="culinair-links">
+              <a
+                href="https://l-affetto.nl/"
+                target="_blank"
+                rel="noopener"
+                className="arrow-link"
+              >
+                Ontdek L&rsquo;Affetto
+              </a>
+              <a href="#pakketten" className="arrow-link arrow-link-muted">
                 Bekijk het JA &amp; Diner pakket
               </a>
             </Reveal>
