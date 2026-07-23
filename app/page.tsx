@@ -54,10 +54,10 @@ export default function Home() {
           <div className="about-media">
             <Reveal className="about-photo">
               <Image
-                src="/images/detail-jurk.jpg"
-                alt="Kanten trouwjurk tegen een muur met klimop"
-                width={900}
-                height={1188}
+                src="/images/bruidspaar.jpg"
+                alt="Bruidspaar loopt hand in hand, bruid met boeket"
+                width={1600}
+                height={1067}
                 sizes="(max-width: 900px) 86vw, 40vw"
               />
             </Reveal>
@@ -79,9 +79,12 @@ export default function Home() {
               <p>
                 Mijn passie voor gastvrijheid en de liefde voor het meest waardevolle moment van
                 de dag komen hier samen. Al jarenlang ben ik als chef-kok en event-regisseuse
-                aanwezig op de mooiste dagen uit het leven van mensen. Met mijn bedrijf
-                L&rsquo;Affetto verzorg ik bijzondere diners en bruiloften, waardoor ik van
-                dichtbij heb meegemaakt wat een trouwdag &eacute;cht bijzonder maakt.
+                aanwezig op de mooiste dagen uit het leven van mensen. Met mijn bedrijf{" "}
+                <a href="https://l-affetto.nl/" target="_blank" rel="noopener" className="inline-link">
+                  L&rsquo;Affetto
+                </a>{" "}
+                verzorg ik bijzondere diners en bruiloften, waardoor ik van dichtbij heb
+                meegemaakt wat een trouwdag &eacute;cht bijzonder maakt.
               </p>
               <p>
                 Toch ontbrak er altijd &eacute;&eacute;n onderdeel: het JAwoord. Daarom ben ik ook
@@ -180,18 +183,36 @@ export default function Home() {
             </div>
             <Reveal className="werkwijze-media" delay={120}>
               <Image
-                src="/images/detail-raam.jpg"
-                alt="Oud raam omringd door klimop"
-                width={900}
-                height={1167}
+                src="/images/bruid-boeket.jpg"
+                alt="Bruid met een kleurrijk boeket in het gras"
+                width={1600}
+                height={1067}
+                sizes="(max-width: 900px) 86vw, 34vw"
+              />
+              <Image
+                src="/images/trouwauto.jpg"
+                alt="Klassieke rode trouwauto met wit lint"
+                width={1600}
+                height={1065}
                 sizes="(max-width: 900px) 86vw, 34vw"
               />
             </Reveal>
           </div>
 
           <Reveal className="extra-services">
-            <p className="label">Meer dan alleen een trouwceremonie</p>
-            <ul>
+            <div className="extra-grid">
+              <div className="extra-media">
+                <Image
+                  src="/images/strand-ceremonie.jpg"
+                  alt="Ceremonieopstelling op het strand met witte stoelen"
+                  width={1600}
+                  height={961}
+                  sizes="(max-width: 900px) 86vw, 30vw"
+                />
+              </div>
+              <div className="extra-body">
+                <p className="label">Meer dan alleen een trouwceremonie</p>
+                <ul>
               <li>Een persoonlijke ceremoniespreker bij een huwelijk in het buitenland.</li>
               <li>Een symbolische ceremonie na een geregistreerd partnerschap.</li>
               <li>
@@ -202,7 +223,9 @@ export default function Home() {
                 Een complete culinaire invulling van de dag via L&rsquo;Affetto, van diner tot
                 feest. Zo lopen ceremonie en gastvrijheid naadloos in elkaar over.
               </li>
-            </ul>
+                </ul>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -234,7 +257,7 @@ export default function Home() {
                 <li>Offici&euml;le huwelijksvoltrekking</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact" className="arrow-link">
+              <Link href="/contact?pakket=officieel-trouwen" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>
@@ -251,7 +274,7 @@ export default function Home() {
                 <li>Jubileum of herbevestiging van geloften</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact" className="arrow-link">
+              <Link href="/contact?pakket=ceremonie-op-maat" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>
@@ -267,7 +290,7 @@ export default function Home() {
                 <li>Exclusief diner of culinaire beleving door L&rsquo;Affetto</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact" className="arrow-link">
+              <Link href="/contact?pakket=ja-diner" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>
@@ -293,18 +316,26 @@ export default function Home() {
                 lopen ceremonie en gastvrijheid naadloos in elkaar over.
               </p>
             </Reveal>
-            <Reveal delay={180}>
-              <a href="#pakketten" className="arrow-link">
+            <Reveal delay={180} className="culinair-links">
+              <a
+                href="https://l-affetto.nl/"
+                target="_blank"
+                rel="noopener"
+                className="arrow-link"
+              >
+                Ontdek L&rsquo;Affetto
+              </a>
+              <a href="#pakketten" className="arrow-link arrow-link-muted">
                 Bekijk het JA &amp; Diner pakket
               </a>
             </Reveal>
           </div>
           <Reveal className="culinair-media" delay={120}>
             <Image
-              src="/images/detail-schoenen.jpg"
-              alt="Kanten sleep van een trouwjurk met bruidsschoenen in het gras"
-              width={900}
-              height={636}
+              src="/images/tuinfeest.jpg"
+              alt="Bruidspaar loopt een sfeervol tuinfeest met lichtjes binnen"
+              width={1600}
+              height={1067}
               sizes="(max-width: 900px) 86vw, 44vw"
             />
           </Reveal>

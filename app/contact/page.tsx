@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
+import { pakketLabel } from "@/lib/pakketten";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -8,7 +9,13 @@ export const metadata: Metadata = {
     "Plan een vrijblijvende kennismaking met trouwambtenaar Anouk. Vertel iets over jullie dag en ontdek wat er mogelijk is.",
 };
 
-export default function Contact() {
+export default async function Contact({
+  searchParams,
+}: {
+  searchParams: Promise<{ pakket?: string }>;
+}) {
+  const { pakket } = await searchParams;
+  const defaultPakket = pakket && pakketLabel(pakket) ? pakket : "";
   return (
     <main>
       <section className="page-hero">
@@ -47,7 +54,7 @@ export default function Contact() {
             </Reveal>
           </div>
           <Reveal delay={120}>
-            <ContactForm />
+            <ContactForm defaultPakket={defaultPakket} />
           </Reveal>
         </div>
       </section>
