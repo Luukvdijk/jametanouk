@@ -357,9 +357,22 @@ export default function Home() {
                 Vertel iets over jullie dag: waar, wanneer en hoe jullie het voor je zien. Ik
                 reageer meestal binnen twee werkdagen.
               </p>
-              <a className="contact-mail" href="mailto:info@jametanouk.nl">
-                info@jametanouk.nl
-              </a>
+              <div className="contact-lines">
+                <a className="contact-mail" href="mailto:info@jametanouk.nl">
+                  info@jametanouk.nl
+                </a>
+                <a className="contact-alt" href="tel:+31611429005">
+                  06 11 42 90 05
+                </a>
+                <a
+                  className="contact-alt"
+                  href="https://www.instagram.com/jametanouk/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  @jametanouk
+                </a>
+              </div>
             </Reveal>
           </div>
           <Reveal delay={150}>
