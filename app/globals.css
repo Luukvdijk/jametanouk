@@ -742,7 +742,8 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 }
 
 .field input,
-.field textarea {
+.field textarea,
+.field select {
   width: 100%;
   background: #16100e;
   border: 1px solid rgba(244, 237, 232, 0.12);
@@ -756,8 +757,18 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   color-scheme: dark;
 }
 
+.field select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ee9384' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.4rem;
+}
+
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.field select:focus {
   outline: none;
   border-color: rgba(238, 147, 132, 0.6);
 }

@@ -257,7 +257,7 @@ export default function Home() {
                 <li>Offici&euml;le huwelijksvoltrekking</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact" className="arrow-link">
+              <Link href="/contact?pakket=officieel-trouwen" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>
@@ -274,7 +274,7 @@ export default function Home() {
                 <li>Jubileum of herbevestiging van geloften</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact" className="arrow-link">
+              <Link href="/contact?pakket=ceremonie-op-maat" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>
@@ -290,7 +290,7 @@ export default function Home() {
                 <li>Exclusief diner of culinaire beleving door L&rsquo;Affetto</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact" className="arrow-link">
+              <Link href="/contact?pakket=ja-diner" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>

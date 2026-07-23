@@ -2,8 +2,9 @@
 
 import { useActionState } from "react";
 import { sendContactMessage, type ContactState } from "@/app/actions/contact";
+import { PAKKETTEN } from "@/lib/pakketten";
 
-export default function ContactForm() {
+export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: string }) {
   const [state, formAction, pending] = useActionState<ContactState, FormData>(
     sendContactMessage,
     null
@@ -45,6 +46,18 @@ export default function ContactForm() {
           <input type="date" name="date" />
         </label>
       </div>
+
+      <label className="field">
+        <span>Waar gaat jullie interesse naar uit?</span>
+        <select name="pakket" defaultValue={defaultPakket} key={defaultPakket}>
+          <option value="">Nog geen voorkeur</option>
+          {Object.entries(PAKKETTEN).map(([slug, label]) => (
+            <option key={slug} value={slug}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </label>
 
       <label className="field">
         <span>Vertel iets over jullie dag *</span>
