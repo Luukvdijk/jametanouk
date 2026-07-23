@@ -20,6 +20,7 @@ const validFields = {
   names: "Lisa & Daan",
   email: "lisa@example.com",
   message: "Wij trouwen in september en zoeken een trouwambtenaar.",
+  consent: "on",
 };
 
 const OLD_ENV = { ...process.env };
@@ -125,6 +126,16 @@ describe("sendContactMessage", () => {
 
     expect(result?.ok).toBe(false);
     expect(result?.error).toContain("namen, e-mailadres en een bericht");
+    expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it("weigert een formulier zonder JA! tegen de privacyverklaring", async () => {
+    const zonderConsent = { ...validFields };
+    delete (zonderConsent as Partial<typeof validFields>).consent;
+    const result = await sendContactMessage(null, formData(zonderConsent));
+
+    expect(result?.ok).toBe(false);
+    expect(result?.error).toContain("JA!");
     expect(sendMock).not.toHaveBeenCalled();
   });
 

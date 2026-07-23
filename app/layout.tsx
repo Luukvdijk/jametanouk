@@ -61,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/#pakketten">Pakketten</Link>
               <Link href="/over-mij">Over mij</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/privacy">Privacy</Link>
             </nav>
             <div className="footer-contact">
               <a href="mailto:info@jametanouk.nl">info@jametanouk.nl</a>

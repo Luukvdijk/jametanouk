@@ -813,6 +813,35 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   pointer-events: none;
 }
 
+.consent {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.consent input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: none;
+  margin-top: 0.15rem;
+  accent-color: var(--rose);
+  cursor: pointer;
+}
+
+.consent span {
+  font-size: 0.9rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.consent em {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--rose);
+}
+
 .form-error { color: #f2a99c; font-size: 0.88rem; }
 
 .form-success {
@@ -891,6 +920,23 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 }
 
 .prose .pull em { color: var(--rose); }
+
+/* ---- Legal (privacy) ---- */
+.legal-prose { max-width: 42rem; }
+
+.legal-updated {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(179, 164, 155, 0.65);
+  margin-bottom: 2rem;
+}
+
+.legal-prose h2 {
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 2.4rem 0 0.9rem;
+}
 
 .signature {
   font-family: var(--serif);

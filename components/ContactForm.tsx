@@ -74,6 +74,17 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
         <input type="text" name="website" tabIndex={-1} autoComplete="off" />
       </label>
 
+      <label className="field consent">
+        <input type="checkbox" name="consent" required />
+        <span>
+          Ik zeg <em>JA!</em> tegen de{" "}
+          <a href="/privacy" target="_blank" rel="noopener" className="inline-link">
+            privacyverklaring
+          </a>
+          .
+        </span>
+      </label>
+
       {state?.error && <p className="form-error" role="alert">{state.error}</p>}
 
       <button type="submit" className="btn" disabled={pending}>
