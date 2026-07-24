@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <main>
+    <main id="inhoud">
       <section className="page-hero">
         <div className="container">
           <p className="kicker rise r1">Privacy</p>

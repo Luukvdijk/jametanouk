@@ -27,6 +27,28 @@ body {
 
 img { max-width: 100%; display: block; }
 
+:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: -4rem;
+  left: 1rem;
+  z-index: 100;
+  background: var(--rose);
+  color: var(--bg);
+  padding: 0.8rem 1.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: top 0.3s var(--ease);
+}
+
+.skip-link:focus-visible { top: 1rem; }
+
 .container {
   max-width: 72rem;
   margin-inline: auto;
@@ -337,6 +359,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   font-size: 0.72rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
+  padding-block: 0.35rem;
 }
 
 /* ---- Hero ---- */
@@ -728,7 +751,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.9rem;
+  gap: 0.25rem;
   margin-top: 0.3rem;
 }
 
@@ -738,6 +761,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   font-size: 0.78rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  padding-block: 0.45rem;
   transition: color 0.35s var(--ease);
 }
 
@@ -898,7 +922,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 .media-note {
   font-size: 0.72rem;
   font-style: italic;
-  color: rgba(179, 164, 155, 0.55);
+  color: rgba(179, 164, 155, 0.85);
   margin-top: 0.7rem;
 }
 
@@ -928,7 +952,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   font-size: 0.68rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(179, 164, 155, 0.65);
+  color: rgba(179, 164, 155, 0.9);
   margin-bottom: 2rem;
 }
 
@@ -982,7 +1006,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.1rem;
   align-items: flex-start;
 }
 
@@ -990,7 +1014,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.7rem;
+  gap: 0.1rem;
 }
 
 .footer-nav a,
@@ -1000,6 +1024,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   font-size: 0.68rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  padding-block: 0.45rem;
   transition: color 0.35s var(--ease);
 }
 
@@ -1019,7 +1044,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   font-size: 0.62rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(179, 164, 155, 0.6);
+  color: rgba(179, 164, 155, 0.9);
 }
 
 /* ---- Cookie banner ---- */
@@ -1065,7 +1090,7 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 .footer-btn {
   background: none;
   border: none;
-  padding: 0;
+  padding: 0.45rem 0;
   cursor: pointer;
   color: var(--muted);
   font-family: var(--sans);

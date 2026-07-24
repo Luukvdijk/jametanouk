@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function OverMij() {
   return (
-    <main>
+    <main id="inhoud">
       <section className="page-hero">
         <div className="ghost-letter" aria-hidden="true">
           A

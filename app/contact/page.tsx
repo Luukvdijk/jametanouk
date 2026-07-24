@@ -18,7 +18,7 @@ export default async function Contact({
   const { pakket } = await searchParams;
   const defaultPakket = pakket && pakketLabel(pakket) ? pakket : "";
   return (
-    <main>
+    <main id="inhoud">
       <section className="page-hero">
         <div className="container">
           <p className="kicker rise r1">Contact</p>

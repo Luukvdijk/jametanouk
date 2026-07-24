@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <main id="inhoud">
       {/* ---- Hero ---- */}
       <section className="hero">
         <div className="hero-photo">
@@ -19,6 +19,7 @@ export default function Home() {
             alt="Trouwjurk hangend aan een muur met klimop"
             fill
             priority
+            quality={65}
             sizes="100vw"
           />
         </div>
