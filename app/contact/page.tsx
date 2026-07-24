@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Plan een vrijblijvende kennismaking met trouwambtenaar Anouk. Vertel iets over jullie dag en ontdek wat er mogelijk is.",
+  alternates: { canonical: "/contact" },
 };
 
 export default async function Contact({

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Privacyverklaring",
   description:
     "Hoe Ja! met Anouk omgaat met jullie persoonsgegevens: welke gegevens we verwerken, waarom, hoe lang en welke rechten jullie hebben.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function Privacy() {
@@ -34,9 +35,11 @@ export default function Privacy() {
               <p className="legal-updated">Laatst bijgewerkt: juli 2026</p>
 
               <p>
-                Ja! met Anouk (trouwambtenaar en ceremoniespreker) is verantwoordelijk voor de
-                verwerking van persoonsgegevens zoals beschreven in deze privacyverklaring.
-                Vragen hierover? Mail naar{" "}
+                Ja! met Anouk (trouwambtenaar en ceremoniespreker), gevestigd aan de
+                Kapelstraat 25, 1404 HV Bussum en ingeschreven bij de Kamer van Koophandel
+                onder nummer 63510898, is verantwoordelijk voor de verwerking van
+                persoonsgegevens zoals beschreven in deze privacyverklaring. Vragen hierover?
+                Mail naar{" "}
                 <a className="inline-link" href="mailto:info@jametanouk.nl">
                   info@jametanouk.nl
                 </a>{" "}
@@ -63,18 +66,39 @@ export default function Privacy() {
 
               <h2>Wie er verder bij betrokken zijn</h2>
               <p>
-                Voor de techniek achter deze website schakelen we twee verwerkers in. Berichten
-                uit het contactformulier worden bezorgd via Resend Inc. en de website wordt
-                gehost door Vercel Inc. Beide partijen zijn gevestigd in de Verenigde Staten;
-                doorgifte gebeurt op basis van de EU-standaardcontractbepalingen. Vercel
+                Voor de techniek achter deze website schakelen we verwerkers in. Berichten uit
+                het contactformulier worden bezorgd via Resend Inc. en de website wordt gehost
+                door Vercel Inc. Voor statistieken gebruiken we Google Analytics van Google
+                Ireland Ltd (zie hieronder). Deze partijen zijn (deels) gevestigd in de
+                Verenigde Staten; doorgifte gebeurt op basis van de
+                EU-standaardcontractbepalingen en het EU-VS Data Privacy Framework. Vercel
                 verwerkt daarnaast beknopte serverlogs (waaronder IP-adressen) om de website
                 veilig en bereikbaar te houden.
               </p>
 
+              <h2>Google Analytics en Search Console</h2>
+              <p>
+                We gebruiken Google Analytics 4 om te begrijpen hoe bezoekers de website
+                gebruiken, bijvoorbeeld welke pagina&rsquo;s het meest bekeken worden. Dat
+                gebeurt alleen nadat jullie via de cookiebanner &lsquo;ja&rsquo; hebben gezegd.
+                We hebben Google Analytics privacyvriendelijk ingesteld: IP-adressen worden
+                geanonimiseerd, we delen geen gegevens voor advertentiedoeleinden en de
+                statistieken zijn niet tot personen te herleiden. Daarnaast gebruiken we
+                Google Search Console om te zien hoe de website in de zoekresultaten van
+                Google presteert; die dienst verwerkt geen persoonsgegevens van bezoekers van
+                deze website.
+              </p>
+
               <h2>Cookies</h2>
               <p>
-                Deze website gebruikt geen tracking- of analysecookies en toont daarom ook geen
-                cookiebanner.
+                Bij jullie eerste bezoek vragen we via de cookiebanner of we
+                statistiek-cookies mogen plaatsen. Zeggen jullie nee, dan plaatsen we geen
+                analysecookies; de website werkt dan gewoon volledig. Zeggen jullie ja, dan
+                plaatst Google Analytics cookies (waaronder <code>_ga</code> en{" "}
+                <code>_ga_*</code>, met een bewaartermijn van maximaal twee jaar). Jullie
+                keuze zelf slaan we lokaal in de browser op. Van gedachten veranderd? Via de
+                link &lsquo;Cookievoorkeuren&rsquo; onderaan elke pagina kunnen jullie de keuze
+                opnieuw maken.
               </p>
 
               <h2>Hoe lang we gegevens bewaren</h2>
