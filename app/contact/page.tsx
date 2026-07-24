@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Plan een vrijblijvende kennismaking met trouwambtenaar Anouk. Vertel iets over jullie dag en ontdek wat er mogelijk is.",
+  alternates: { canonical: "/contact" },
 };
 
 export default async function Contact({
@@ -17,7 +18,7 @@ export default async function Contact({
   const { pakket } = await searchParams;
   const defaultPakket = pakket && pakketLabel(pakket) ? pakket : "";
   return (
-    <main>
+    <main id="inhoud">
       <section className="page-hero">
         <div className="container">
           <p className="kicker rise r1">Contact</p>

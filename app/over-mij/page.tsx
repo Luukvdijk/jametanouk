@@ -7,11 +7,12 @@ export const metadata: Metadata = {
   title: "Over mij",
   description:
     "Chef-kok, event-regisseuse en trouwambtenaar (BABS). Maak kennis met Anouk: warm, betrokken en oprecht.",
+  alternates: { canonical: "/over-mij" },
 };
 
 export default function OverMij() {
   return (
-    <main>
+    <main id="inhoud">
       <section className="page-hero">
         <div className="ghost-letter" aria-hidden="true">
           A

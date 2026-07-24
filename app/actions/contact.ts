@@ -86,6 +86,9 @@ export async function sendContactMessage(
   if (!names || !email || !message) {
     return { ok: false, error: "Vul in ieder geval jullie namen, e-mailadres en een bericht in." };
   }
+  if (formData.get("consent") !== "on") {
+    return { ok: false, error: "Zeg nog even JA! tegen de privacyverklaring, dan kan het bericht op pad." };
+  }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return { ok: false, error: "Dat e-mailadres lijkt niet te kloppen. Kijk er nog even naar." };
   }
