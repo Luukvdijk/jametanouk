@@ -3,9 +3,20 @@
 import { Resend } from "resend";
 import { pakketLabel } from "@/lib/pakketten";
 
+export type ContactValues = {
+  names: string;
+  email: string;
+  phone: string;
+  date: string;
+  pakket: string;
+  message: string;
+  consent: boolean;
+};
+
 export type ContactState = {
   ok: boolean;
   error?: string;
+  values?: ContactValues;
 } | null;
 
 function escapeHtml(value: string): string {
@@ -81,19 +92,33 @@ export async function sendContactMessage(
   const phone = String(formData.get("phone") ?? "").trim();
   const date = String(formData.get("date") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
-  const pakket = pakketLabel(String(formData.get("pakket") ?? "").trim());
+  const pakketSlug = String(formData.get("pakket") ?? "").trim();
+  const pakket = pakketLabel(pakketSlug);
+  const consent = formData.get("consent") === "on";
+
+  // bij een fout geven we de ingevulde waarden terug, zodat het formulier niet leegt
+  const values: ContactValues = { names, email, phone, date, pakket: pakketSlug, message, consent };
+  const fail = (error: string): ContactState => ({ ok: false, error, values });
 
   if (!names || !email || !message) {
-    return { ok: false, error: "Vul in ieder geval jullie namen, e-mailadres en een bericht in." };
+    return fail("Vul in ieder geval jullie namen, e-mailadres en een bericht in.");
   }
-  if (formData.get("consent") !== "on") {
-    return { ok: false, error: "Zeg nog even JA! tegen de privacyverklaring, dan kan het bericht op pad." };
+  if (!consent) {
+    return fail("Zeg nog even JA! tegen de privacyverklaring, dan kan het bericht op pad.");
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { ok: false, error: "Dat e-mailadres lijkt niet te kloppen. Kijk er nog even naar." };
+    return fail("Dat e-mailadres lijkt niet te kloppen. Kijk er nog even naar.");
+  }
+  if (date) {
+    const chosen = new Date(`${date}T12:00:00`);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (Number.isNaN(chosen.getTime()) || chosen < today) {
+      return fail("De gekozen trouwdatum ligt in het verleden. Kies een datum in de toekomst.");
+    }
   }
   if (names.length > 200 || message.length > 5000) {
-    return { ok: false, error: "Het bericht is te lang. Kort het iets in en probeer het opnieuw." };
+    return fail("Het bericht is te lang. Kort het iets in en probeer het opnieuw.");
   }
 
   // Cloudflare Turnstile (alleen wanneer geconfigureerd)
@@ -101,10 +126,7 @@ export async function sendContactMessage(
   if (turnstileSecret) {
     const token = String(formData.get("cf-turnstile-response") ?? "").trim();
     if (!token) {
-      return {
-        ok: false,
-        error: "De spamcontrole kon jullie bericht niet controleren. Probeer het nog een keer.",
-      };
+      return fail("De spamcontrole kon jullie bericht niet controleren. Probeer het nog een keer.");
     }
     try {
       const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
@@ -114,25 +136,18 @@ export async function sendContactMessage(
       });
       const verifyData = (await verifyRes.json()) as { success?: boolean };
       if (!verifyData.success) {
-        return {
-          ok: false,
-          error: "De spamcontrole is niet gelukt. Ververs de pagina en probeer het opnieuw.",
-        };
+        return fail("De spamcontrole is niet gelukt. Ververs de pagina en probeer het opnieuw.");
       }
     } catch {
-      return {
-        ok: false,
-        error: "De spamcontrole is niet bereikbaar. Probeer het later opnieuw of mail info@jametanouk.nl.",
-      };
+      return fail(
+        "De spamcontrole is niet bereikbaar. Probeer het later opnieuw of mail info@jametanouk.nl."
+      );
     }
   }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    return {
-      ok: false,
-      error: "Het formulier is tijdelijk niet beschikbaar. Mail ons direct via info@jametanouk.nl.",
-    };
+    return fail("Het formulier is tijdelijk niet beschikbaar. Mail ons direct via info@jametanouk.nl.");
   }
 
   const lines = [
@@ -156,16 +171,10 @@ export async function sendContactMessage(
       html: buildEmailHtml({ names, email, phone, date, pakket, message }),
     });
     if (error) {
-      return {
-        ok: false,
-        error: "Versturen is niet gelukt. Probeer het later opnieuw of mail info@jametanouk.nl.",
-      };
+      return fail("Versturen is niet gelukt. Probeer het later opnieuw of mail info@jametanouk.nl.");
     }
     return { ok: true };
   } catch {
-    return {
-      ok: false,
-      error: "Versturen is niet gelukt. Probeer het later opnieuw of mail info@jametanouk.nl.",
-    };
+    return fail("Versturen is niet gelukt. Probeer het later opnieuw of mail info@jametanouk.nl.");
   }
 }
