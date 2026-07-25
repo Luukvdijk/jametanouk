@@ -11,6 +11,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.5.3",
     "next": "^16",
     "react": "^19",
     "react-dom": "^19",

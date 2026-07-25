@@ -868,6 +868,61 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 
 .form-error { color: #f2a99c; font-size: 0.88rem; }
 
+/* ---- Trouwringen (laden + succes) ---- */
+.rings { width: 104px; overflow: visible; }
+
+.rings .ring {
+  stroke-width: 2.5px;
+  fill: none;
+}
+
+.rings .ring-a { stroke: var(--rose); }
+.rings .ring-b { stroke: var(--ink); }
+
+.rings .sparkle { fill: var(--rose); }
+
+.contact-form { position: relative; }
+
+.form-sending {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: rgba(29, 21, 18, 0.95);
+  text-align: center;
+  padding: 2rem;
+}
+
+.form-sending .rings { margin-bottom: 0.8rem; }
+
+.form-sending .ring {
+  stroke-dasharray: 0.72 0.28;
+  animation: ringChase 1.5s linear infinite;
+}
+
+.form-sending .ring-b {
+  animation-direction: reverse;
+}
+
+.form-sending .sparkle {
+  animation: sparkleBlink 1.5s ease-in-out infinite;
+}
+
+.sending-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.sending-text {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
 .form-success {
   background: var(--surface);
   border: 1px solid rgba(238, 147, 132, 0.35);
@@ -875,22 +930,54 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   text-align: center;
 }
 
-.form-success-mark {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: var(--rose);
-  transform: rotate(45deg);
+.form-success .ring {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: ringDraw 1.1s var(--ease) forwards;
+}
+
+.form-success .ring-b { animation-delay: 0.35s; }
+
+.form-success .sparkle {
+  opacity: 0;
+  transform-origin: 60px 10px;
+  animation: sparklePop 0.6s var(--ease) forwards;
+  animation-delay: 1.3s;
 }
 
 .form-success h3 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin: 1.1rem 0 0.6rem;
 }
 
+.form-success h3 em {
+  font-style: italic;
+  color: var(--rose);
+}
+
 .form-success p { color: var(--muted); line-height: 1.75; max-width: 26rem; margin-inline: auto; }
+
+@keyframes ringChase {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -1; }
+}
+
+@keyframes ringDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes sparkleBlink {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@keyframes sparklePop {
+  from { opacity: 0; transform: scale(0.2); }
+  60% { opacity: 1; transform: scale(1.25); }
+  to   { opacity: 1; transform: scale(1); }
+}
 
 /* ---- Page hero (subpages) ---- */
 .page-hero {
@@ -1121,6 +1208,8 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   }
   html { scroll-behavior: auto; }
   .reveal, .rise { opacity: 1 !important; transform: none !important; }
+  .form-success .ring { stroke-dashoffset: 0; }
+  .form-success .sparkle { opacity: 1; transform: none; }
 }
 
 /* ---- Responsive ---- */
