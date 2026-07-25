@@ -26,6 +26,15 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
   const [turnstileReady, setTurnstileReady] = useState(!TURNSTILE_SITE_KEY);
   const turnstileRef = useRef<TurnstileInstance>(null);
 
+  // na een fout zet React het formulier terug op de defaultValues:
+  // door de ingevulde waarden als defaults terug te geven blijft alles staan
+  const prev = state && !state.ok ? state.values : undefined;
+
+  const now = new Date();
+  const minDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(
+    now.getDate()
+  ).padStart(2, "0")}`;
+
   // na een serverfout is het captcha-token verbruikt: widget resetten
   useEffect(() => {
     if (state && !state.ok) {
@@ -61,28 +70,52 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
       <div className="field-row">
         <label className="field">
           <span>Jullie namen *</span>
-          <input type="text" name="names" required autoComplete="name" placeholder="Bijv. Lisa &amp; Daan" />
+          <input
+            type="text"
+            name="names"
+            required
+            autoComplete="name"
+            placeholder="Bijv. Lisa &amp; Daan"
+            defaultValue={prev?.names}
+          />
         </label>
         <label className="field">
           <span>E-mailadres *</span>
-          <input type="email" name="email" required autoComplete="email" placeholder="jullie@email.nl" />
+          <input
+            type="email"
+            name="email"
+            required
+            autoComplete="email"
+            placeholder="jullie@email.nl"
+            defaultValue={prev?.email}
+          />
         </label>
       </div>
 
       <div className="field-row">
         <label className="field">
           <span>Telefoonnummer</span>
-          <input type="tel" name="phone" autoComplete="tel" placeholder="Optioneel" />
+          <input
+            type="tel"
+            name="phone"
+            autoComplete="tel"
+            placeholder="Optioneel"
+            defaultValue={prev?.phone}
+          />
         </label>
         <label className="field">
           <span>Trouwdatum</span>
-          <input type="date" name="date" />
+          <input type="date" name="date" min={minDate} defaultValue={prev?.date} />
         </label>
       </div>
 
       <label className="field">
         <span>Waar gaat jullie interesse naar uit?</span>
-        <select name="pakket" defaultValue={defaultPakket} key={defaultPakket}>
+        <select
+          name="pakket"
+          defaultValue={prev?.pakket ?? defaultPakket}
+          key={prev?.pakket ?? defaultPakket}
+        >
           <option value="">Nog geen voorkeur</option>
           {Object.entries(PAKKETTEN).map(([slug, label]) => (
             <option key={slug} value={slug}>
@@ -99,6 +132,7 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
           required
           rows={5}
           placeholder="Waar en wanneer trouwen jullie? En hoe zien jullie de ceremonie voor je?"
+          defaultValue={prev?.message}
         />
       </label>
 
@@ -108,7 +142,7 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
       </label>
 
       <label className="field consent">
-        <input type="checkbox" name="consent" required />
+        <input type="checkbox" name="consent" required defaultChecked={prev?.consent} />
         <span>
           Ik zeg <em>JA!</em> tegen de{" "}
           <a href="/privacy" target="_blank" rel="noopener" className="inline-link">

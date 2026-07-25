@@ -39,10 +39,11 @@ afterEach(() => {
 
 describe("sendContactMessage", () => {
   it("accepteert een geldig formulier en mailt naar info@jametanouk.nl", async () => {
+    const futureDate = new Date(Date.now() + 90 * 86400000).toISOString().slice(0, 10);
     sendMock.mockResolvedValue({ error: null });
     const result = await sendContactMessage(
       null,
-      formData({ ...validFields, phone: "0612345678", date: "2026-09-12" })
+      formData({ ...validFields, phone: "0612345678", date: futureDate })
     );
 
     expect(result).toEqual({ ok: true });
@@ -52,8 +53,38 @@ describe("sendContactMessage", () => {
     expect(payload.replyTo).toBe("lisa@example.com");
     expect(payload.subject).toContain("Lisa & Daan");
     expect(payload.text).toContain("Telefoon: 0612345678");
-    expect(payload.text).toContain("Trouwdatum: 2026-09-12");
+    expect(payload.text).toContain(`Trouwdatum: ${futureDate}`);
     expect(payload.text).toContain(validFields.message);
+  });
+
+  it("weigert een trouwdatum in het verleden", async () => {
+    const result = await sendContactMessage(
+      null,
+      formData({ ...validFields, date: "2020-06-15" })
+    );
+
+    expect(result?.ok).toBe(false);
+    expect(result?.error).toContain("verleden");
+    expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it("geeft de ingevulde waarden terug bij een fout, zodat het formulier niet leegt", async () => {
+    const zonderConsent = { ...validFields };
+    delete (zonderConsent as Partial<typeof validFields>).consent;
+    const result = await sendContactMessage(
+      null,
+      formData({ ...zonderConsent, phone: "0612345678", pakket: "ja-diner" })
+    );
+
+    expect(result?.ok).toBe(false);
+    expect(result?.values).toMatchObject({
+      names: "Lisa & Daan",
+      email: "lisa@example.com",
+      phone: "0612345678",
+      pakket: "ja-diner",
+      message: validFields.message,
+      consent: false,
+    });
   });
 
   it("laat telefoon en datum weg uit de mail als ze leeg zijn", async () => {
