@@ -30,6 +30,7 @@ beforeEach(() => {
   process.env.RESEND_API_KEY = "re_test_key";
   delete process.env.CONTACT_FROM;
   delete process.env.CONTACT_TO;
+  delete process.env.TURNSTILE_SECRET_KEY;
 });
 
 afterEach(() => {
@@ -159,6 +160,56 @@ describe("sendContactMessage", () => {
     expect(result?.ok).toBe(false);
     expect(result?.error).toContain("te lang");
     expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it("weigert zonder captcha-token wanneer Turnstile is geconfigureerd", async () => {
+    process.env.TURNSTILE_SECRET_KEY = "ts_secret";
+    const result = await sendContactMessage(null, formData(validFields));
+
+    expect(result?.ok).toBe(false);
+    expect(result?.error).toContain("spamcontrole");
+    expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it("verstuurt wanneer Turnstile het token goedkeurt", async () => {
+    process.env.TURNSTILE_SECRET_KEY = "ts_secret";
+    const fetchMock = vi.fn().mockResolvedValue({ json: async () => ({ success: true }) });
+    vi.stubGlobal("fetch", fetchMock);
+    sendMock.mockResolvedValue({ error: null });
+
+    const result = await sendContactMessage(
+      null,
+      formData({ ...validFields, "cf-turnstile-response": "token123" })
+    );
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      expect.objectContaining({ method: "POST" })
+    );
+    expect(result).toEqual({ ok: true });
+    vi.unstubAllGlobals();
+  });
+
+  it("weigert wanneer Turnstile het token afkeurt", async () => {
+    process.env.TURNSTILE_SECRET_KEY = "ts_secret";
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ json: async () => ({ success: false }) }));
+
+    const result = await sendContactMessage(
+      null,
+      formData({ ...validFields, "cf-turnstile-response": "slecht-token" })
+    );
+
+    expect(result?.ok).toBe(false);
+    expect(result?.error).toContain("spamcontrole");
+    expect(sendMock).not.toHaveBeenCalled();
+    vi.unstubAllGlobals();
+  });
+
+  it("slaat de captcha-check over zonder TURNSTILE_SECRET_KEY", async () => {
+    sendMock.mockResolvedValue({ error: null });
+    const result = await sendContactMessage(null, formData(validFields));
+
+    expect(result).toEqual({ ok: true });
   });
 
   it("valt netjes terug wanneer RESEND_API_KEY ontbreekt", async () => {

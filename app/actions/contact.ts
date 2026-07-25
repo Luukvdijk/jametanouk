@@ -96,6 +96,37 @@ export async function sendContactMessage(
     return { ok: false, error: "Het bericht is te lang. Kort het iets in en probeer het opnieuw." };
   }
 
+  // Cloudflare Turnstile (alleen wanneer geconfigureerd)
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    const token = String(formData.get("cf-turnstile-response") ?? "").trim();
+    if (!token) {
+      return {
+        ok: false,
+        error: "De spamcontrole kon jullie bericht niet controleren. Probeer het nog een keer.",
+      };
+    }
+    try {
+      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ secret: turnstileSecret, response: token }),
+      });
+      const verifyData = (await verifyRes.json()) as { success?: boolean };
+      if (!verifyData.success) {
+        return {
+          ok: false,
+          error: "De spamcontrole is niet gelukt. Ververs de pagina en probeer het opnieuw.",
+        };
+      }
+    } catch {
+      return {
+        ok: false,
+        error: "De spamcontrole is niet bereikbaar. Probeer het later opnieuw of mail info@jametanouk.nl.",
+      };
+    }
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     return {
