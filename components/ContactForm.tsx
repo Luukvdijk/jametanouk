@@ -159,7 +159,12 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
           onSuccess={() => setTurnstileReady(true)}
           onExpire={() => setTurnstileReady(false)}
           onError={() => setTurnstileReady(false)}
-          options={{ theme: "dark", appearance: "interaction-only", size: "flexible" }}
+          options={{
+            theme: "dark",
+            appearance: "interaction-only",
+            size: "flexible",
+            action: "turnstile-spin-v2",
+          }}
         />
       )}
 
