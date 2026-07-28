@@ -219,8 +219,8 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 }
 
 @keyframes drift {
-  from { transform: scale(1.08) translateX(1%); }
-  to   { transform: scale(1) translateX(0); }
+  from { transform: scale(1.04); }
+  to   { transform: scale(1); }
 }
 
 @keyframes grain {
@@ -377,8 +377,8 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
   object-fit: cover;
   object-position: 58% 30%;
   filter: saturate(0.82) brightness(0.9);
-  animation: drift 26s ease-out both;
-  transform-origin: 60% 40%;
+  animation: drift 1.5s ease-out both;
+  transform-origin: 50% 100%;
 }
 
 .hero-photo::after {
