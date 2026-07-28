@@ -122,7 +122,7 @@ export async function sendContactMessage(
   }
 
   // Cloudflare Turnstile (alleen wanneer geconfigureerd)
-  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  const turnstileSecret = process.env.TURNSTILE_SECRET;
   if (turnstileSecret) {
     const token = String(formData.get("cf-turnstile-response") ?? "").trim();
     if (!token) {
@@ -131,8 +131,8 @@ export async function sendContactMessage(
     try {
       const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ secret: turnstileSecret, response: token }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ secret: turnstileSecret, response: token }),
       });
       const verifyData = (await verifyRes.json()) as { success?: boolean };
       if (!verifyData.success) {

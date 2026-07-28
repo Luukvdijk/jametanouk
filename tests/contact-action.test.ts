@@ -30,7 +30,7 @@ beforeEach(() => {
   process.env.RESEND_API_KEY = "re_test_key";
   delete process.env.CONTACT_FROM;
   delete process.env.CONTACT_TO;
-  delete process.env.TURNSTILE_SECRET_KEY;
+  delete process.env.TURNSTILE_SECRET;
 });
 
 afterEach(() => {
@@ -194,7 +194,7 @@ describe("sendContactMessage", () => {
   });
 
   it("weigert zonder captcha-token wanneer Turnstile is geconfigureerd", async () => {
-    process.env.TURNSTILE_SECRET_KEY = "ts_secret";
+    process.env.TURNSTILE_SECRET = "ts_secret";
     const result = await sendContactMessage(null, formData(validFields));
 
     expect(result?.ok).toBe(false);
@@ -203,7 +203,7 @@ describe("sendContactMessage", () => {
   });
 
   it("verstuurt wanneer Turnstile het token goedkeurt", async () => {
-    process.env.TURNSTILE_SECRET_KEY = "ts_secret";
+    process.env.TURNSTILE_SECRET = "ts_secret";
     const fetchMock = vi.fn().mockResolvedValue({ json: async () => ({ success: true }) });
     vi.stubGlobal("fetch", fetchMock);
     sendMock.mockResolvedValue({ error: null });
@@ -222,7 +222,7 @@ describe("sendContactMessage", () => {
   });
 
   it("weigert wanneer Turnstile het token afkeurt", async () => {
-    process.env.TURNSTILE_SECRET_KEY = "ts_secret";
+    process.env.TURNSTILE_SECRET = "ts_secret";
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ json: async () => ({ success: false }) }));
 
     const result = await sendContactMessage(
@@ -236,7 +236,7 @@ describe("sendContactMessage", () => {
     vi.unstubAllGlobals();
   });
 
-  it("slaat de captcha-check over zonder TURNSTILE_SECRET_KEY", async () => {
+  it("slaat de captcha-check over zonder TURNSTILE_SECRET", async () => {
     sendMock.mockResolvedValue({ error: null });
     const result = await sendContactMessage(null, formData(validFields));
 
