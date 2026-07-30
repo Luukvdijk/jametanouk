@@ -28,11 +28,11 @@ export default function Home() {
           <p className="kicker rise r1">Trouwambtenaar &middot; Ceremoniespreker</p>
           <h1>
             <span className="line">
-              <span className="rise r2">Liefdesverhaal,</span>
+              <span className="rise r2">Jullie liefde verdient</span>
             </span>
             <span className="line">
               <span className="rise r3">
-                <em>Oprecht Verteld.</em>
+                <em>een verhaal dat klopt.</em>
               </span>
             </span>
           </h1>
