@@ -1264,6 +1264,9 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 }
 
 @media (max-width: 560px) {
+  /* de langere kopregels passen anders niet op één regel per animatiemasker */
+  .hero h1 { font-size: clamp(1.8rem, 9.8vw, 3rem); }
+
   .field-row { grid-template-columns: 1fr; }
 
   .cookie-banner {
