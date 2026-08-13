@@ -147,7 +147,7 @@ export async function sendContactMessage(
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    return fail("Het formulier is tijdelijk niet beschikbaar. Mail ons direct via info@jametanouk.nl.");
+    return fail("Het formulier is tijdelijk niet beschikbaar. Mail dan direct naar info@jametanouk.nl.");
   }
 
   const lines = [

@@ -36,13 +36,12 @@ export default function OverMij() {
         <div className="container about-page-grid">
           <Reveal className="about-page-media">
             <Image
-              src="/images/detail-jurk.jpg"
-              alt="Kanten trouwjurk tegen een muur met klimop"
+              src="/images/anouk.jpg"
+              alt="Anouk in koksbuis, lachend aan het werk in de keuken"
               width={900}
-              height={1188}
+              height={1200}
               sizes="(max-width: 900px) 86vw, 38vw"
             />
-            <p className="media-note">Hier komt binnenkort een foto van Anouk.</p>
           </Reveal>
 
           <div className="prose">
@@ -65,7 +64,8 @@ export default function OverMij() {
             </Reveal>
             <Reveal>
               <p>
-                Daarom heb ik ervoor gekozen om ook trouwambtenaar (BABS) te worden. Zo mag ik
+                Daarom heb ik ervoor gekozen om ook zelfstandig trouwambtenaar (BABS) te
+                worden. Zo mag ik
                 niet alleen bijdragen aan de beleving van jullie dag, maar ook aan het meest
                 betekenisvolle moment ervan.
               </p>

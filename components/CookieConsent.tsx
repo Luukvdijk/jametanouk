@@ -75,8 +75,8 @@ export default function CookieConsent() {
         Ik zeg <em>JA!</em> tegen cookies?
       </p>
       <p className="cookie-text">
-        We gebruiken alleen statistiek-cookies (Google Analytics) om de website te verbeteren,
-        en pas nadat jullie ja zeggen. Lees meer in de{" "}
+        Deze website gebruikt alleen statistiek-cookies (Google Analytics) om de site te
+        verbeteren, en pas nadat jullie ja zeggen. Lees meer in de{" "}
         <Link href="/privacy" className="inline-link">
           privacyverklaring
         </Link>

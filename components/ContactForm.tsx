@@ -63,7 +63,7 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
         <div className="form-sending" role="status">
           <Rings className="rings" />
           <p className="sending-title">Een momentje...</p>
-          <p className="sending-text">We bezorgen jullie bericht bij Anouk.</p>
+          <p className="sending-text">Jullie bericht is onderweg naar Anouk.</p>
         </div>
       )}
 
