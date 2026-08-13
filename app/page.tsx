@@ -94,12 +94,13 @@ export default function Home() {
               </p>
               <p>
                 Toch ontbrak er altijd &eacute;&eacute;n onderdeel: het JAwoord. Daarom ben ik ook
-                trouwambtenaar (BABS) geworden. Zo mag ik niet alleen bijdragen aan de beleving
-                van jullie dag, maar ook aan het meest betekenisvolle moment ervan.
+                zelfstandig trouwambtenaar (BABS) geworden. Zo mag ik niet alleen bijdragen aan
+                de beleving van jullie dag, maar ook aan het meest betekenisvolle moment ervan.
               </p>
               <p className="about-note">
-                Het is bij mij n&eacute;t even anders: na de ceremonie kan ik mijn toga verwisselen
-                voor mijn koksbuis en ook het diner een onvergetelijke invulling geven.
+                Het is bij mij n&eacute;t even anders: na de ceremonie kan ik mijn
+                &lsquo;toga&rsquo; verwisselen voor mijn koksbuis en ook het diner een
+                onvergetelijke invulling geven.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -129,7 +130,7 @@ export default function Home() {
           <Reveal>
             <p className="label">Stap voor stap</p>
             <h2>
-              Onze <em>Werkwijze</em>
+              Mijn <em>Werkwijze</em>
             </h2>
           </Reveal>
           <div className="werkwijze-grid">
@@ -140,10 +141,10 @@ export default function Home() {
                   <div>
                     <h3>Kennismaken</h3>
                     <p>
-                      Jullie trouwdag begint met een goed gesprek. We maken kennis, bespreken
-                      jullie wensen en ik hoor graag wie jullie zijn. Hoe hebben jullie elkaar
-                      leren kennen? Wat vinden jullie belangrijk? En hoe zien jullie de ceremonie
-                      voor je?
+                      Jullie trouwdag begint met een goed gesprek. De eerste kennismaking is er
+                      vooral om te ontdekken of er een klik is: voelt het goed tussen ons? We
+                      duiken nog niet meteen de inhoud van de ceremonie in, dat komt later. Aan
+                      deze kennismaking zijn geen kosten verbonden.
                     </p>
                   </div>
                 </div>
@@ -152,11 +153,11 @@ export default function Home() {
                 <div className="step">
                   <span className="step-num">02</span>
                   <div>
-                    <h3>Jullie verhaal</h3>
+                    <h3>De praktische zaken</h3>
                     <p>
-                      Na onze kennismaking ga ik aan de slag. Ik schrijf geen standaard speech,
-                      maar een persoonlijk verhaal dat bij jullie past. Met humor waar het kan,
-                      emotie waar het mag en altijd vanuit jullie eigen verhaal.
+                      Samen bespreken we waar de ceremonie plaatsvindt, in welke gemeente jullie
+                      trouwen en wat er geregeld moet worden. Ik begeleid jullie door het proces,
+                      zodat jullie precies weten wat jullie kunnen verwachten.
                     </p>
                   </div>
                 </div>
@@ -165,11 +166,11 @@ export default function Home() {
                 <div className="step">
                   <span className="step-num">03</span>
                   <div>
-                    <h3>De praktische zaken</h3>
+                    <h3>Jullie verhaal</h3>
                     <p>
-                      Samen bespreken we waar de ceremonie plaatsvindt, in welke gemeente jullie
-                      trouwen en wat er geregeld moet worden. Ik begeleid jullie door het proces,
-                      zodat jullie precies weten wat jullie kunnen verwachten.
+                      Dan ga ik aan de slag. Ik schrijf geen standaard speech, maar een
+                      persoonlijk verhaal dat bij jullie past. Met humor waar het kan, emotie
+                      waar het mag en altijd vanuit jullie eigen verhaal.
                     </p>
                   </div>
                 </div>
@@ -209,10 +210,10 @@ export default function Home() {
             <div className="extra-grid">
               <div className="extra-media">
                 <Image
-                  src="/images/strand-ceremonie.jpg"
-                  alt="Ceremonieopstelling op het strand met witte stoelen"
+                  src="/images/strand-bruidspaar.jpg"
+                  alt="Bruidspaar wandelt hand in hand over het strand"
                   width={1600}
-                  height={961}
+                  height={1067}
                   sizes="(max-width: 900px) 86vw, 30vw"
                 />
               </div>
@@ -259,8 +260,9 @@ export default function Home() {
               <p className="package-sub">Officieel trouwen</p>
               <ul>
                 <li>Kennismaking</li>
-                <li>Persoonlijke ceremonie</li>
-                <li>Offici&euml;le huwelijksvoltrekking</li>
+                <li>Jullie offici&euml;le huwelijksceremonie</li>
+                <li>Voltrokken door de BABS en juridisch vastgelegd</li>
+                <li>Dagco&ouml;rdinatie mogelijk</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
               <Link href="/contact?pakket=officieel-trouwen" className="arrow-link">
@@ -278,6 +280,7 @@ export default function Home() {
                 <li>Buitenlandse bruiloft</li>
                 <li>Geregistreerd partnerschap</li>
                 <li>Jubileum of herbevestiging van geloften</li>
+                <li>Dagco&ouml;rdinatie mogelijk</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
               <Link href="/contact?pakket=ceremonie-op-maat" className="arrow-link">

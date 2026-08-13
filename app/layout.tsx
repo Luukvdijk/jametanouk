@@ -69,13 +69,6 @@ const jsonLd = {
       telephone: "+31611429005",
       email: "info@jametanouk.nl",
       image: "https://www.jametanouk.nl/og.jpg",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Kapelstraat 25",
-        postalCode: "1404 HV",
-        addressLocality: "Bussum",
-        addressCountry: "NL",
-      },
       identifier: { "@type": "PropertyValue", propertyID: "KVK", value: "63510898" },
       areaServed: "Nederland",
       founder: { "@type": "Person", name: "Anouk" },
@@ -87,7 +80,7 @@ const jsonLd = {
             "@type": "Service",
             name: "JA met Anouk · Officieel trouwen",
             description:
-              "Kennismaking, persoonlijke ceremonie en officiële huwelijksvoltrekking door een trouwambtenaar (BABS).",
+              "Kennismaking en jullie officiële huwelijksceremonie, voltrokken door een trouwambtenaar (BABS) en juridisch vastgelegd. Dagcoördinatie mogelijk.",
           },
         },
         {
@@ -169,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div className="footer-bottom">
             <span>&copy; 2026 Ja! met Anouk</span>
-            <span>KvK 63510898 &middot; Kapelstraat 25, 1404 HV Bussum</span>
+            <span>KvK 63510898</span>
             <span>Trouwambtenaar (BABS) &middot; Ceremonies op maat</span>
           </div>
         </footer>

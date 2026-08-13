@@ -34,10 +34,10 @@ export default function Voorwaarden() {
             <div className="prose legal-prose">
               <p className="legal-updated">Versie: juli 2026</p>
 
-              <h2>1. Wie wij zijn</h2>
+              <h2>1. Wie ik ben</h2>
               <p>
-                Ja! met Anouk, gevestigd aan de Kapelstraat 25, 1404 HV Bussum, ingeschreven bij
-                de Kamer van Koophandel onder nummer 63510898. Bereikbaar via{" "}
+                Ja! met Anouk, ingeschreven bij de Kamer van Koophandel onder nummer 63510898.
+                Bereikbaar via{" "}
                 <a className="inline-link" href="mailto:info@jametanouk.nl">
                   info@jametanouk.nl
                 </a>{" "}
@@ -56,7 +56,8 @@ export default function Voorwaarden() {
               <p>
                 Offertes zijn vrijblijvend en 30 dagen geldig. Een boeking komt tot stand
                 zodra jullie de offerte schriftelijk (of per e-mail) bevestigen. De datum is
-                definitief gereserveerd na bevestiging en ontvangst van de aanbetaling.
+                pas definitief gereserveerd na bevestiging &eacute;n ontvangst van de
+                aanbetaling.
               </p>
 
               <h2>4. Tarieven en betaling</h2>
@@ -67,13 +68,16 @@ export default function Voorwaarden() {
                 reiskosten staan vooraf in de offerte.
               </p>
 
-              <h2>5. Offici&euml;le huwelijksvoltrekking</h2>
+              <h2>5. Officieel trouwen</h2>
               <p>
-                Voor een offici&euml;le voltrekking moet de gemeente Anouk benoemen tot
-                trouwambtenaar voor &eacute;&eacute;n dag. Wij begeleiden die aanvraag, maar de
-                beslissing ligt bij de gemeente. Blijkt een benoeming niet mogelijk, dan kunnen
-                jullie de ceremonie kosteloos omzetten naar een symbolische ceremonie of
-                annuleren met volledige teruggave van het betaalde bedrag.
+                Voor officieel trouwen moet de gemeente mij benoemen tot trouwambtenaar voor
+                &eacute;&eacute;n dag. Trouwen jullie op een locatie buiten het gemeentehuis,
+                dan moet die locatie bovendien een offici&euml;le trouwlocatie zijn of kunnen
+                worden en moet de gemeente daarvoor toestemming geven. Ik begeleid die
+                aanvragen, maar de beslissing ligt bij de gemeente. Blijkt een benoeming niet
+                mogelijk, dan kunnen jullie de ceremonie kosteloos omzetten naar een
+                symbolische ceremonie of annuleren met volledige teruggave van het betaalde
+                bedrag.
               </p>
 
               <h2>6. Annuleren en verzetten</h2>
@@ -117,14 +121,14 @@ export default function Voorwaarden() {
 
               <h2>10. Aansprakelijkheid</h2>
               <p>
-                Onze aansprakelijkheid is beperkt tot het bedrag van de overeenkomst. We zijn
+                Mijn aansprakelijkheid is beperkt tot het bedrag van de overeenkomst. Ik ben
                 niet aansprakelijk voor indirecte schade of voor beslissingen van gemeenten en
                 andere derden. Jullie wettelijke rechten als consument blijven altijd gelden.
               </p>
 
               <h2>11. Privacy</h2>
               <p>
-                Persoonsgegevens verwerken we volgens onze{" "}
+                Persoonsgegevens verwerk ik volgens de{" "}
                 <Link className="inline-link" href="/privacy">
                   privacyverklaring
                 </Link>
@@ -135,7 +139,8 @@ export default function Voorwaarden() {
               <p>
                 Zijn jullie ergens niet tevreden over, laat het dan zo snel mogelijk weten;
                 dan zoeken we samen een oplossing. Op alle overeenkomsten is Nederlands recht
-                van toepassing. Geschillen leggen we voor aan de bevoegde Nederlandse rechter.
+                van toepassing. Geschillen worden voorgelegd aan de bevoegde Nederlandse
+                rechter.
               </p>
 
               <p>
