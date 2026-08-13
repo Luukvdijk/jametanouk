@@ -197,10 +197,10 @@ export default function Home() {
                 sizes="(max-width: 900px) 86vw, 34vw"
               />
               <Image
-                src="/images/trouwauto.jpg"
-                alt="Klassieke rode trouwauto met wit lint"
+                src="/images/strand-bruidspaar.jpg"
+                alt="Bruidspaar wandelt hand in hand over het strand"
                 width={1600}
-                height={1065}
+                height={1067}
                 sizes="(max-width: 900px) 86vw, 34vw"
               />
             </Reveal>
@@ -210,10 +210,10 @@ export default function Home() {
             <div className="extra-grid">
               <div className="extra-media">
                 <Image
-                  src="/images/strand-bruidspaar.jpg"
-                  alt="Bruidspaar wandelt hand in hand over het strand"
+                  src="/images/strand-ceremonie.jpg"
+                  alt="Ceremonieopstelling op het strand met witte stoelen"
                   width={1600}
-                  height={1067}
+                  height={961}
                   sizes="(max-width: 900px) 86vw, 30vw"
                 />
               </div>
