@@ -1,8 +1,8 @@
+import ContactForm from "@/components/ContactForm";
+import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
-import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -25,7 +25,9 @@ export default function Home() {
         </div>
         <div className="grain" aria-hidden="true" />
         <div className="hero-frame container">
-          <p className="kicker rise r1">Trouwambtenaar &middot; Ceremoniespreker</p>
+          <p className="kicker rise r1">
+            Trouwambtenaar &middot; Ceremoniespreker
+          </p>
           <h1>
             <span className="line">
               <span className="rise r2">Jullie liefde verdient</span>
@@ -37,8 +39,9 @@ export default function Home() {
             </span>
           </h1>
           <p className="hero-lede rise r4">
-            De woorden die het verschil maken. Een persoonlijke ceremonie met humor waar het
-            kan, emotie waar het mag en altijd vanuit jullie eigen verhaal.
+            De woorden die het verschil maken. Een persoonlijke ceremonie met
+            humor waar het kan, emotie waar het mag en altijd vanuit jullie
+            eigen verhaal.
           </p>
           <div className="hero-cta rise r5">
             <Link href="/contact" className="btn">
@@ -69,8 +72,8 @@ export default function Home() {
             </Reveal>
             <Reveal delay={150} className="quote-card">
               <p>
-                &ldquo;Het vangen van die kleine, authentieke details die jullie liefde uniek
-                maken.&rdquo;
+                &ldquo;Het vangen van die kleine, authentieke details die jullie
+                liefde uniek maken.&rdquo;
               </p>
             </Reveal>
           </div>
@@ -78,29 +81,30 @@ export default function Home() {
             <Reveal>
               <p className="label">Het begin</p>
               <h2>
-                Ja! met <em>Anouk</em>
+                JA! met <em>Anouk</em>
               </h2>
             </Reveal>
             <Reveal delay={100}>
               <p>
-                Mijn passie voor gastvrijheid en de liefde voor het meest waardevolle moment van
-                de dag komen hier samen. Al jarenlang ben ik als chef-kok en event-regisseuse
-                aanwezig op de mooiste dagen uit het leven van mensen. Met mijn bedrijf{" "}
-                <a href="https://l-affetto.nl/" target="_blank" rel="noopener" className="inline-link">
-                  L&rsquo;Affetto
+                Mijn passie voor gastvrijheid en de liefde voor het meest
+                waardevolle moment van de dag komen hier samen. Ik heb JArenlang
+                mensen ontvangen, diners{" "}
+                <a
+                  href="https://l-affetto.nl/"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-link"
+                >
+                  (L&rsquo;Affetto)
                 </a>{" "}
-                verzorg ik bijzondere diners en bruiloften, waardoor ik van dichtbij heb
-                meegemaakt wat een trouwdag &eacute;cht bijzonder maakt.
-              </p>
-              <p>
-                Toch ontbrak er altijd &eacute;&eacute;n onderdeel: het JAwoord. Daarom ben ik ook
-                zelfstandig trouwambtenaar (BABS) geworden. Zo mag ik niet alleen bijdragen aan
-                de beleving van jullie dag, maar ook aan het meest betekenisvolle moment ervan.
+                verzorgd, evenementen begeleid en sta daardoor letterlijk tussen
+                de mensen. Dat maakt mij juist intressant als
+                (zelfstandige)BABS.
               </p>
               <p className="about-note">
-                Het is bij mij n&eacute;t even anders: na de ceremonie kan ik mijn
-                &lsquo;toga&rsquo; verwisselen voor mijn koksbuis en ook het diner een
-                onvergetelijke invulling geven.
+                Het is bij mij n&eacute;t even anders: na de ceremonie kan ik
+                mijn &lsquo;toga&rsquo; verwisselen voor mijn koksbuis en ook
+                het diner een onvergetelijke invulling geven.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -117,8 +121,8 @@ export default function Home() {
         <div className="container">
           <Reveal>
             <blockquote>
-              &ldquo;Ik verkoop geen &lsquo;dienst&rsquo;, ik verkoop <em>rust</em>. Als Anouk
-              erbij is, komt het goed.&rdquo;
+              &ldquo;Ik verkoop geen &lsquo;dienst&rsquo;, ik verkoop{" "}
+              <em>rust</em>. Als Anouk erbij is, komt het goed.&rdquo;
             </blockquote>
           </Reveal>
         </div>
@@ -141,10 +145,11 @@ export default function Home() {
                   <div>
                     <h3>Kennismaken</h3>
                     <p>
-                      Jullie trouwdag begint met een goed gesprek. De eerste kennismaking is er
-                      vooral om te ontdekken of er een klik is: voelt het goed tussen ons? We
-                      duiken nog niet meteen de inhoud van de ceremonie in, dat komt later. Aan
-                      deze kennismaking zijn geen kosten verbonden.
+                      Jullie trouwdag begint met een goed gesprek. De eerste
+                      kennismaking is er vooral om te ontdekken of er een klik
+                      is: voelt het goed tussen ons? We duiken nog niet meteen
+                      de inhoud van de ceremonie in, dat komt later. Aan deze
+                      kennismaking zijn geen kosten verbonden.
                     </p>
                   </div>
                 </div>
@@ -155,9 +160,10 @@ export default function Home() {
                   <div>
                     <h3>De praktische zaken</h3>
                     <p>
-                      Samen bespreken we waar de ceremonie plaatsvindt, in welke gemeente jullie
-                      trouwen en wat er geregeld moet worden. Ik begeleid jullie door het proces,
-                      zodat jullie precies weten wat jullie kunnen verwachten.
+                      Samen bespreken we waar de ceremonie plaatsvindt, in welke
+                      gemeente jullie trouwen en wat er geregeld moet worden. Ik
+                      begeleid jullie door het proces, zodat jullie precies
+                      weten wat jullie kunnen verwachten.
                     </p>
                   </div>
                 </div>
@@ -168,9 +174,10 @@ export default function Home() {
                   <div>
                     <h3>Jullie verhaal</h3>
                     <p>
-                      Dan ga ik aan de slag. Ik schrijf geen standaard speech, maar een
-                      persoonlijk verhaal dat bij jullie past. Met humor waar het kan, emotie
-                      waar het mag en altijd vanuit jullie eigen verhaal.
+                      Dan ga ik aan de slag. Ik schrijf geen standaard speech,
+                      maar een persoonlijk verhaal dat bij jullie past. Met
+                      humor waar het kan, emotie waar het mag en altijd vanuit
+                      jullie eigen verhaal.
                     </p>
                   </div>
                 </div>
@@ -181,8 +188,9 @@ export default function Home() {
                   <div>
                     <h3>De grote dag</h3>
                     <p>
-                      Op jullie trouwdag zorg ik voor een ontspannen en persoonlijke ceremonie.
-                      Een moment waarop jullie alleen maar hoeven te genieten.
+                      Op jullie trouwdag zorg ik voor een ontspannen en
+                      persoonlijke ceremonie. Een moment waarop jullie alleen
+                      maar hoeven te genieten.
                     </p>
                   </div>
                 </div>
@@ -220,16 +228,31 @@ export default function Home() {
               <div className="extra-body">
                 <p className="label">Meer dan alleen een trouwceremonie</p>
                 <ul>
-              <li>Een persoonlijke ceremoniespreker bij een huwelijk in het buitenland.</li>
-              <li>Een symbolische ceremonie na een geregistreerd partnerschap.</li>
-              <li>
-                Het leiden van de ceremonie volgens het draaiboek van jullie weddingplanner,
-                zodat de ceremoniemeester zelf volop van de dag kan genieten.
-              </li>
-              <li>
-                Een complete culinaire invulling van de dag via L&rsquo;Affetto, van diner tot
-                feest. Zo lopen ceremonie en gastvrijheid naadloos in elkaar over.
-              </li>
+                  <li>
+                    Een persoonlijke ceremoniespreker bij een huwelijk in het
+                    buitenland.
+                  </li>
+                  <li>
+                    Een symbolische ceremonie na een geregistreerd partnerschap.
+                  </li>
+                  <li>
+                    Het leiden van de ceremonie volgens het draaiboek van jullie
+                    weddingplanner, zodat de ceremoniemeester zelf volop van de
+                    dag kan genieten.
+                  </li>
+                  <li>
+                    Een complete culinaire invulling van de dag via{" "}
+                    <a
+                      href="https://l-affetto.nl/"
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-link"
+                    >
+                      L&rsquo;Affetto
+                    </a>
+                    , van diner tot feest. Zo lopen ceremonie en gastvrijheid
+                    naadloos in elkaar over.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -243,19 +266,16 @@ export default function Home() {
           <Reveal className="section-head">
             <p className="label">Pakketten</p>
             <h2>
-              Kies jullie <em>Pakket</em>
+              Kies jullie <em>JA!</em>
             </h2>
             <p className="section-intro">
-              De tarieven zijn afhankelijk van jullie wensen en de invulling van de dag. Daarom
-              werk ik met heldere pakketten, zodat jullie vooraf precies weten waar jullie aan
-              toe zijn.
+              De tarieven zijn afhankelijk van jullie wensen en de invulling van
+              de dag. Daarom werk ik met heldere pakketten, zodat jullie vooraf
+              precies weten waar jullie aan toe zijn.
             </p>
           </Reveal>
           <div className="packages">
             <Reveal delay={0} className="package">
-              <span className="package-icon" aria-hidden="true">
-                &#129293;
-              </span>
               <h3>JA met Anouk</h3>
               <p className="package-sub">Officieel trouwen</p>
               <ul>
@@ -265,14 +285,14 @@ export default function Home() {
                 <li>Dagco&ouml;rdinatie mogelijk</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact?pakket=officieel-trouwen" className="arrow-link">
+              <Link
+                href="/contact?pakket=officieel-trouwen"
+                className="arrow-link"
+              >
                 Vraag tarieven aan
               </Link>
             </Reveal>
             <Reveal delay={100} className="package featured">
-              <span className="package-icon" aria-hidden="true">
-                &#10024;
-              </span>
               <h3>JA met Anouk</h3>
               <p className="package-sub">Ceremonie op maat</p>
               <ul>
@@ -283,20 +303,24 @@ export default function Home() {
                 <li>Dagco&ouml;rdinatie mogelijk</li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact?pakket=ceremonie-op-maat" className="arrow-link">
+              <Link
+                href="/contact?pakket=ceremonie-op-maat"
+                className="arrow-link"
+              >
                 Vraag tarieven aan
               </Link>
             </Reveal>
             <Reveal delay={200} className="package">
-              <span className="package-icon" aria-hidden="true">
-                &#127869;&#65039;
-              </span>
               <h3>JA &amp; Diner met Anouk</h3>
               <p className="package-sub">Ceremonie en culinair</p>
               <ul>
                 <li>Ceremonie</li>
-                <li>Dagco&ouml;rdinatie tijdens de ceremonie (volgens draaiboek)</li>
-                <li>Exclusief diner of culinaire beleving door L&rsquo;Affetto</li>
+                <li>
+                  Dagco&ouml;rdinatie tijdens de ceremonie (volgens draaiboek)
+                </li>
+                <li>
+                  Exclusief diner of culinaire beleving door L&rsquo;Affetto
+                </li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
               <Link href="/contact?pakket=ja-diner" className="arrow-link">
@@ -319,10 +343,11 @@ export default function Home() {
             </Reveal>
             <Reveal delay={100}>
               <p>
-                Als chef-kok verzorg ik met L&rsquo;Affetto een bijzonder diner of complete
-                culinaire beleving na de ceremonie. Van een priv&eacute;diner voor twee tot een
-                avond met al jullie gasten: de liefde voor de tafel is waar het ooit begon. Zo
-                lopen ceremonie en gastvrijheid naadloos in elkaar over.
+                Als chef-kok verzorg ik met L&rsquo;Affetto een bijzonder diner
+                of complete culinaire beleving na de ceremonie. Van een
+                priv&eacute;diner voor twee tot een avond met al jullie gasten:
+                de liefde voor de tafel is waar het ooit begon. Zo lopen
+                ceremonie en gastvrijheid naadloos in elkaar over.
               </p>
             </Reveal>
             <Reveal delay={180} className="culinair-links">
@@ -358,14 +383,10 @@ export default function Home() {
             <Reveal>
               <p className="label">Contact</p>
               <h2>
-                Zullen we jullie <em>verhaal</em> ontdekken?
+                Wat is jullie <em>verhaal?</em>
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p>
-                Vertel iets over jullie dag: waar, wanneer en hoe jullie het voor je zien. Ik
-                reageer meestal binnen twee werkdagen.
-              </p>
               <div className="contact-lines">
                 <a className="contact-mail" href="mailto:info@jametanouk.nl">
                   info@jametanouk.nl

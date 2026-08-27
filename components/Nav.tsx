@@ -42,7 +42,7 @@ export default function Nav() {
     <>
       <header className={`site-nav ${scrolled || open ? "scrolled" : ""}`}>
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          Ja! <em>met Anouk</em>
+          JA! <em>met Anouk</em>
         </Link>
 
         <nav className="nav-links" aria-label="Hoofdmenu">
@@ -85,7 +85,11 @@ export default function Nav() {
         <div className="mobile-menu-contact">
           <a href="mailto:info@jametanouk.nl">info@jametanouk.nl</a>
           <a href="tel:+31611429005">06 11 42 90 05</a>
-          <a href="https://www.instagram.com/jametanouk/" target="_blank" rel="noopener">
+          <a
+            href="https://www.instagram.com/jametanouk/"
+            target="_blank"
+            rel="noopener"
+          >
             Instagram
           </a>
         </div>

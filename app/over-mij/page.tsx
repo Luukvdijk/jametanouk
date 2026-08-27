@@ -1,7 +1,7 @@
+import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Over mij",
@@ -18,7 +18,6 @@ export default function OverMij() {
           A
         </div>
         <div className="container">
-          <p className="kicker rise r1">Over mij</p>
           <h1>
             <span className="line">
               <span className="rise r2">Een bruiloft draait niet om</span>
@@ -47,49 +46,71 @@ export default function OverMij() {
           <div className="prose">
             <Reveal>
               <p>
-                Al jarenlang ben ik als chef-kok en event-regisseuse aanwezig op de mooiste dagen
-                uit het leven van mensen. Met mijn bedrijf{" "}
-                <a href="https://l-affetto.nl/" target="_blank" rel="noopener" className="inline-link">
+                Al jarenlang ben ik als chef-kok en event-regisseuse aanwezig op
+                de bijzondere dagen uit het leven van mijn lieve gasten. Ik weet
+                hoe belangrijk de sfeer is, hoe bijzonder de eerste momenten
+                kunnen zijn en hoeveel liefde er schuilt in de kleine details.
+                {/* Met
+                mijn bedrijf{" "}
+                <a
+                  href="https://l-affetto.nl/"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-link"
+                >
                   L&rsquo;Affetto
                 </a>{" "}
-                verzorg ik bijzondere diners en bruiloften, waardoor ik van dichtbij heb
-                meegemaakt wat een trouwdag &eacute;cht bijzonder maakt. Ik weet hoe belangrijk de sfeer is, hoe spannend de
-                eerste momenten kunnen zijn en hoeveel liefde er schuilt in de kleine details.
+                verzorg ik bijzondere diners en bruiloften, waardoor ik van
+                dichtbij heb meegemaakt wat een trouwdag &eacute;cht bijzonder
+                maakt. */}
               </p>
             </Reveal>
             <Reveal>
               <p className="pull">
-                Toch ontbrak er altijd &eacute;&eacute;n onderdeel: <em>het JAwoord.</em>
+                Toch ontbrak er altijd &eacute;&eacute;n onderdeel:{" "}
+                <em>het JAwoord.</em>
               </p>
             </Reveal>
             <Reveal>
               <p>
-                Daarom heb ik ervoor gekozen om ook zelfstandig trouwambtenaar (BABS) te
-                worden. Zo mag ik
-                niet alleen bijdragen aan de beleving van jullie dag, maar ook aan het meest
-                betekenisvolle moment ervan.
+                Daarom heb ik ervoor gekozen om ook zelfstandig trouwambtenaar
+                (BABS) te worden. Zo mag ik niet alleen bijdragen aan de
+                beleving van jullie dag, maar ook aan het meest betekenisvolle
+                moment ervan.
               </p>
               <p>
-                Als trouwambtenaar leer ik jullie graag &eacute;cht kennen. Geen standaard
-                verhaal, geen ceremonie uit een boekje, maar een persoonlijk verhaal waarin
-                jullie jezelf herkennen. Met humor waar het kan, emotie waar het mag en altijd op
-                een manier die bij jullie past.
+                Als trouwambtenaar leer ik jullie graag &eacute;cht kennen. Geen
+                standaard verhaal, geen ceremonie uit een boekje, maar een
+                persoonlijk verhaal waarin jullie jezelf herkennen. Met humor
+                waar het kan, emotie waar het mag en altijd op een manier die
+                bij jullie past.
               </p>
               <p>
-                Mensen omschrijven mij als warm, betrokken en oprecht. Ik luister goed, voel snel
-                aan wat iemand nodig heeft en weet een ontspannen sfeer te cre&euml;ren. Daardoor
-                voelen niet alleen jullie je op je gemak, maar ook jullie familie en vrienden.
+                Mensen omschrijven mij als warm, betrokken en oprecht. Ik
+                luister goed, voel snel aan wat iemand nodig heeft en weet een
+                ontspannen sfeer te cre&euml;ren. Daardoor voelen niet alleen
+                jullie je op je gemak, maar ook jullie familie en vrienden.
               </p>
               <p>
-                En misschien maakt dat mij juist n&eacute;t even anders. Want naast het voltrekken
-                van jullie huwelijk kan ik, als jullie dat leuk vinden, later op de dag gewoon
-                weer mijn koksbuis aantrekken en een bijzonder diner verzorgen voor jullie en
-                jullie gasten. Zo ben ik er niet alleen voor het mooiste &lsquo;ja&rsquo;, maar
-                draag ik ook bij aan een onvergetelijke avond.
+                En misschien maakt dat mij juist n&eacute;t even anders. Want
+                naast het voltrekken van jullie huwelijk kan ik, als jullie dat
+                leuk vinden, later op de dag gewoon weer mijn koksbuis{" "}
+                <a
+                  href="https://l-affetto.nl/"
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-link"
+                >
+                  (L&rsquo;Affetto)
+                </a>{" "}
+                aantrekken en een bijzonder diner verzorgen voor jullie en
+                jullie gasten. Zo ben ik er niet alleen voor het mooiste
+                &lsquo;JA&rsquo;, maar draag ik ook bij aan een onvergetelijke
+                avond.
               </p>
               <p>
-                Ik kijk ernaar uit om jullie verhaal te leren kennen en er samen een ceremonie
-                van te maken die nog jarenlang wordt herinnerd.
+                Ik kijk ernaar uit om jullie verhaal te leren kennen en er samen
+                een ceremonie van te maken die nog jarenlang wordt herinnerd.
               </p>
             </Reveal>
             <Reveal>
@@ -105,7 +126,7 @@ export default function OverMij() {
         <div className="container">
           <Reveal>
             <h2>
-              Klaar voor jullie <em>ja?</em>
+              Klaar voor jullie <em>JA?</em>
             </h2>
             <Link href="/contact" className="btn">
               Plan een kennismaking
