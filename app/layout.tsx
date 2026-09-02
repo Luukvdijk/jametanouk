@@ -87,7 +87,7 @@ const jsonLd = {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "JA met Anouk · Officieel trouwen",
+            name: "JA! met Anouk · Officieel trouwen",
             description:
               "Kennismaking en jullie officiële huwelijksceremonie, voltrokken door een trouwambtenaar (BABS) en juridisch vastgelegd. Dagcoördinatie mogelijk.",
           },
@@ -96,7 +96,7 @@ const jsonLd = {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "JA met Anouk · Ceremonie op maat",
+            name: "JA! met Anouk · Ceremonie op maat",
             description:
               "Symbolische ceremonie, buitenlandse bruiloft, geregistreerd partnerschap of herbevestiging van geloften.",
           },
@@ -105,7 +105,7 @@ const jsonLd = {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "JA & Diner met Anouk",
+            name: "JA! & Diner met Anouk",
             description:
               "Ceremonie met dagcoördinatie en een exclusief diner of culinaire beleving door L'Affetto.",
           },

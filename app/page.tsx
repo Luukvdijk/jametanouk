@@ -276,7 +276,7 @@ export default function Home() {
           </Reveal>
           <div className="packages">
             <Reveal delay={0} className="package">
-              <h3>JA met Anouk</h3>
+              <h3>JA! met Anouk</h3>
               <p className="package-sub">Officieel trouwen</p>
               <ul>
                 <li>Kennismaking</li>
@@ -293,7 +293,7 @@ export default function Home() {
               </Link>
             </Reveal>
             <Reveal delay={100} className="package featured">
-              <h3>JA met Anouk</h3>
+              <h3>JA! met Anouk</h3>
               <p className="package-sub">Ceremonie op maat</p>
               <ul>
                 <li>Symbolische ceremonie</li>
@@ -311,7 +311,7 @@ export default function Home() {
               </Link>
             </Reveal>
             <Reveal delay={200} className="package">
-              <h3>JA &amp; Diner met Anouk</h3>
+              <h3>JA! &amp; Diner met Anouk</h3>
               <p className="package-sub">Ceremonie en culinaire beleving</p>
               <ul>
                 <li>Ceremonie</li>
@@ -360,7 +360,7 @@ export default function Home() {
                 Ontdek L&rsquo;Affetto
               </a>
               <a href="#pakketten" className="arrow-link arrow-link-muted">
-                Bekijk het JA &amp; Diner pakket
+                Bekijk het JA! &amp; Diner pakket
               </a>
             </Reveal>
           </div>

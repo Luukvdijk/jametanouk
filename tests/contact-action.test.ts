@@ -101,8 +101,8 @@ describe("sendContactMessage", () => {
     await sendContactMessage(null, formData({ ...validFields, pakket: "ja-diner" }));
 
     const payload = sendMock.mock.calls[0][0];
-    expect(payload.text).toContain("Pakket: JA & Diner met Anouk");
-    expect(payload.html).toContain("JA &amp; Diner met Anouk");
+    expect(payload.text).toContain("Pakket: JA! & Diner met Anouk");
+    expect(payload.html).toContain("JA! &amp; Diner met Anouk");
   });
 
   it("negeert een onbekende pakket-waarde", async () => {
