@@ -80,7 +80,7 @@ export default function OverMij() {
               </p>
               <p>
                 Als trouwambtenaar leer ik jullie graag &eacute;cht kennen. Geen
-                standaard verhaal, geen ceremonie uit een boekje, maar een
+                standaardverhaal, geen ceremonie uit een boekje, maar een
                 persoonlijk verhaal waarin jullie jezelf herkennen. Met humor
                 waar het kan, emotie waar het mag en altijd op een manier die
                 bij jullie past.

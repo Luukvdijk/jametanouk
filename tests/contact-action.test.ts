@@ -130,13 +130,13 @@ describe("sendContactMessage", () => {
 
   it("gebruikt CONTACT_TO en CONTACT_FROM wanneer die gezet zijn", async () => {
     process.env.CONTACT_TO = "anouk@jametanouk.nl";
-    process.env.CONTACT_FROM = "Ja! met Anouk <site@jametanouk.nl>";
+    process.env.CONTACT_FROM = "JA! met Anouk <site@jametanouk.nl>";
     sendMock.mockResolvedValue({ error: null });
     await sendContactMessage(null, formData(validFields));
 
     const payload = sendMock.mock.calls[0][0];
     expect(payload.to).toBe("anouk@jametanouk.nl");
-    expect(payload.from).toBe("Ja! met Anouk <site@jametanouk.nl>");
+    expect(payload.from).toBe("JA! met Anouk <site@jametanouk.nl>");
   });
 
   it("doet niets maar meldt ok bij een ingevulde honeypot", async () => {

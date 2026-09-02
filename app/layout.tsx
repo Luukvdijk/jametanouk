@@ -1,5 +1,6 @@
 import CookieConsent from "@/components/CookieConsent";
 import CookieSettingsButton from "@/components/CookieSettingsButton";
+import HashScroll from "@/components/HashScroll";
 import Nav from "@/components/Nav";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Jost } from "next/font/google";
@@ -75,7 +76,8 @@ const jsonLd = {
         value: "63510898",
       },
       areaServed: "Nederland",
-      founder: { "@type": "Person", name: "Anouk" },
+      founder: { "@id": "https://www.jametanouk.nl/#anouk" },
+      employee: { "@id": "https://www.jametanouk.nl/#anouk" },
       sameAs: [
         "https://www.instagram.com/jametanouk/",
         "https://l-affetto.nl/",
@@ -111,6 +113,26 @@ const jsonLd = {
       ],
     },
     {
+      "@type": "Person",
+      "@id": "https://www.jametanouk.nl/#anouk",
+      name: "Anouk",
+      jobTitle: "Trouwambtenaar (BABS) en ceremoniespreker",
+      description:
+        "Anouk is chef-kok, event-regisseuse en trouwambtenaar (BABS). Ze schrijft geen standaardspeech, maar een persoonlijk verhaal per bruidspaar.",
+      url: "https://www.jametanouk.nl/over-mij",
+      image: "https://www.jametanouk.nl/images/anouk.jpg",
+      worksFor: { "@id": "https://www.jametanouk.nl/#business" },
+      knowsAbout: [
+        "Huwelijksceremonie",
+        "Trouwambtenaar (BABS)",
+        "Ceremoniespreker",
+        "Symbolische ceremonie",
+        "Dagcoördinatie",
+        "Culinaire beleving",
+      ],
+      sameAs: ["https://www.instagram.com/jametanouk/"],
+    },
+    {
       "@type": "WebSite",
       "@id": "https://www.jametanouk.nl/#website",
       url: "https://www.jametanouk.nl",
@@ -143,6 +165,7 @@ export default function RootLayout({
         <a href="#inhoud" className="skip-link">
           Spring naar de inhoud
         </a>
+        <HashScroll />
         <Nav />
         {children}
         <footer className="site-footer">

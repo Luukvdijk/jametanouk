@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Privacyverklaring",
   description:
-    "Hoe Ja! met Anouk omgaat met jullie persoonsgegevens: welke gegevens ik verwerk, waarom, hoe lang en welke rechten jullie hebben.",
+    "Hoe JA! met Anouk omgaat met jullie persoonsgegevens: welke gegevens ik verwerk, waarom, hoe lang en welke rechten jullie hebben.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -35,7 +35,7 @@ export default function Privacy() {
               <p className="legal-updated">Laatst bijgewerkt: juli 2026</p>
 
               <p>
-                Ja! met Anouk (trouwambtenaar en ceremoniespreker), ingeschreven bij de
+                JA! met Anouk (trouwambtenaar en ceremoniespreker), ingeschreven bij de
                 Kamer van Koophandel onder nummer 63510898, is verantwoordelijk voor de
                 verwerking van
                 persoonsgegevens zoals beschreven in deze privacyverklaring. Vragen hierover?

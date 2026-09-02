@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Algemene voorwaarden",
   description:
-    "De algemene voorwaarden van Ja! met Anouk voor huwelijksceremonies, symbolische ceremonies en aanverwante diensten.",
+    "De algemene voorwaarden van JA! met Anouk voor huwelijksceremonies, symbolische ceremonies en aanverwante diensten.",
   alternates: { canonical: "/voorwaarden" },
 };
 
@@ -36,7 +36,7 @@ export default function Voorwaarden() {
 
               <h2>1. Wie ik ben</h2>
               <p>
-                Ja! met Anouk, ingeschreven bij de Kamer van Koophandel onder nummer 63510898.
+                JA! met Anouk, ingeschreven bij de Kamer van Koophandel onder nummer 63510898.
                 Bereikbaar via{" "}
                 <a className="inline-link" href="mailto:info@jametanouk.nl">
                   info@jametanouk.nl
@@ -46,7 +46,7 @@ export default function Voorwaarden() {
 
               <h2>2. Toepasselijkheid</h2>
               <p>
-                Deze voorwaarden gelden voor alle offertes en overeenkomsten van Ja! met Anouk
+                Deze voorwaarden gelden voor alle offertes en overeenkomsten van JA! met Anouk
                 voor huwelijksceremonies, symbolische ceremonies, ceremoniespreken en
                 aanverwante diensten. Afwijkingen gelden alleen als ze schriftelijk zijn
                 afgesproken.
@@ -84,7 +84,8 @@ export default function Voorwaarden() {
               <p>
                 Annuleren kan alleen schriftelijk. Tot 6 maanden voor de datum zijn jullie
                 alleen de aanbetaling verschuldigd. Bij annulering tussen 6 en 2 maanden voor
-                de datum is dat 50% van het totaalbedrag, korter dan 2 maanden 75% en korter
+                de datum is dat 50% van het totale overeengekomen bedrag, korter dan 2 maanden 75%
+                en korter
                 dan 14 dagen 100%. Verzetten naar een nieuwe, beschikbare datum binnen 12
                 maanden kan &eacute;&eacute;n keer kosteloos.
               </p>

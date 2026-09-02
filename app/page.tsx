@@ -87,7 +87,7 @@ export default function Home() {
             <Reveal delay={100}>
               <p>
                 Mijn passie voor gastvrijheid en de liefde voor het meest
-                waardevolle moment van de dag komen hier samen. Ik heb JArenlang
+                waardevolle moment van de dag komen hier samen. Ik heb jarenlang
                 mensen ontvangen, diners{" "}
                 <a
                   href="https://l-affetto.nl/"
@@ -98,8 +98,8 @@ export default function Home() {
                   (L&rsquo;Affetto)
                 </a>{" "}
                 verzorgd, evenementen begeleid en sta daardoor letterlijk tussen
-                de mensen. Dat maakt mij juist intressant als
-                (zelfstandige)BABS.
+                de mensen. Dat maakt mij juist interessant als
+                (zelfstandige) BABS.
               </p>
               <p className="about-note">
                 Het is bij mij n&eacute;t even anders: na de ceremonie kan ik
@@ -134,7 +134,7 @@ export default function Home() {
           <Reveal>
             <p className="label">Stap voor stap</p>
             <h2>
-              Mijn <em>Werkwijze</em>
+              Mijn <em>werkwijze</em>
             </h2>
           </Reveal>
           <div className="werkwijze-grid">
@@ -174,7 +174,7 @@ export default function Home() {
                   <div>
                     <h3>Jullie verhaal</h3>
                     <p>
-                      Dan ga ik aan de slag. Ik schrijf geen standaard speech,
+                      Dan ga ik aan de slag. Ik schrijf geen standaardspeech,
                       maar een persoonlijk verhaal dat bij jullie past. Met
                       humor waar het kan, emotie waar het mag en altijd vanuit
                       jullie eigen verhaal.
@@ -312,7 +312,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={200} className="package">
               <h3>JA &amp; Diner met Anouk</h3>
-              <p className="package-sub">Ceremonie en culinair</p>
+              <p className="package-sub">Ceremonie en culinaire beleving</p>
               <ul>
                 <li>Ceremonie</li>
                 <li>
