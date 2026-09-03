@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const sendMock = vi.hoisted(() => vi.fn());
+const ipMock = vi.hoisted(() => ({ value: "203.0.113.1" }));
 
 vi.mock("resend", () => ({
   Resend: class {
@@ -8,7 +9,12 @@ vi.mock("resend", () => ({
   },
 }));
 
+vi.mock("next/headers", () => ({
+  headers: async () => new Headers({ "x-forwarded-for": ipMock.value }),
+}));
+
 import { sendContactMessage } from "../app/actions/contact";
+import { MAX_ATTEMPTS, resetRateLimit } from "../lib/rate-limit";
 
 function formData(fields: Record<string, string>): FormData {
   const fd = new FormData();
@@ -25,8 +31,14 @@ const validFields = {
 
 const OLD_ENV = { ...process.env };
 
+let ipCounter = 0;
+
 beforeEach(() => {
   sendMock.mockReset();
+  resetRateLimit();
+  // elke test krijgt een eigen bezoeker, anders tikt de limiter door
+  ipCounter += 1;
+  ipMock.value = `203.0.113.${ipCounter}`;
   process.env.RESEND_API_KEY = "re_test_key";
   delete process.env.CONTACT_FROM;
   delete process.env.CONTACT_TO;
@@ -258,6 +270,69 @@ describe("sendContactMessage", () => {
 
     expect(result?.ok).toBe(false);
     expect(result?.error).toContain("niet gelukt");
+  });
+
+  it("blokkeert na te veel aanvragen vanaf hetzelfde adres", async () => {
+    sendMock.mockResolvedValue({ error: null });
+
+    for (let i = 0; i < MAX_ATTEMPTS; i++) {
+      const ok = await sendContactMessage(null, formData(validFields));
+      expect(ok).toEqual({ ok: true });
+    }
+
+    const blocked = await sendContactMessage(null, formData(validFields));
+    expect(blocked?.ok).toBe(false);
+    expect(blocked?.error).toContain("te veel");
+    expect(sendMock).toHaveBeenCalledTimes(MAX_ATTEMPTS);
+  });
+
+  it("telt een geblokkeerde aanvraag niet als verzonden mail", async () => {
+    sendMock.mockResolvedValue({ error: null });
+    for (let i = 0; i < MAX_ATTEMPTS; i++) await sendContactMessage(null, formData(validFields));
+    sendMock.mockClear();
+
+    await sendContactMessage(null, formData(validFields));
+    expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it("houdt de ingevulde waarden vast wanneer de limiet bereikt is", async () => {
+    sendMock.mockResolvedValue({ error: null });
+    for (let i = 0; i < MAX_ATTEMPTS; i++) await sendContactMessage(null, formData(validFields));
+
+    const blocked = await sendContactMessage(null, formData(validFields));
+    expect(blocked?.values?.names).toBe(validFields.names);
+  });
+
+  it("laat de honeypot niet meetellen voor de limiet", async () => {
+    sendMock.mockResolvedValue({ error: null });
+    for (let i = 0; i < MAX_ATTEMPTS + 3; i++) {
+      const result = await sendContactMessage(
+        null,
+        formData({ ...validFields, website: "spam" })
+      );
+      expect(result).toEqual({ ok: true });
+    }
+
+    // een echte bezoeker vanaf hetzelfde adres kan daarna gewoon nog mailen
+    expect(await sendContactMessage(null, formData(validFields))).toEqual({ ok: true });
+  });
+
+  it("weigert een absurd lang e-mailadres", async () => {
+    const email = `${"a".repeat(300)}@example.com`;
+    const result = await sendContactMessage(null, formData({ ...validFields, email }));
+
+    expect(result?.ok).toBe(false);
+    expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it("weigert een absurd lang telefoonnummer", async () => {
+    const result = await sendContactMessage(
+      null,
+      formData({ ...validFields, phone: "0".repeat(200) })
+    );
+
+    expect(result?.ok).toBe(false);
+    expect(sendMock).not.toHaveBeenCalled();
   });
 
   it("geeft een foutmelding wanneer Resend een exception gooit", async () => {

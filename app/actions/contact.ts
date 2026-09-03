@@ -1,6 +1,8 @@
 "use server";
 
 import { pakketLabel } from "@/lib/pakketten";
+import { takeToken } from "@/lib/rate-limit";
+import { headers } from "next/headers";
 import { Resend } from "resend";
 
 export type ContactValues = {
@@ -78,11 +80,20 @@ function buildEmailHtml(details: {
 </html>`;
 }
 
+/** Vercel puts the visitor's address first in x-forwarded-for. */
+async function visitorKey(): Promise<string> {
+  const list = await headers();
+  const forwarded = list.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0]!.trim();
+  return list.get("x-real-ip") ?? "onbekend";
+}
+
 export async function sendContactMessage(
   _prev: ContactState,
   formData: FormData,
 ): Promise<ContactState> {
   // honeypot: echte bezoekers laten dit veld leeg
+  // bewust vóór de limiet, zodat bots de teller van een gedeeld adres niet vullen
   if (String(formData.get("website") ?? "").trim() !== "") {
     return { ok: true };
   }
@@ -133,9 +144,23 @@ export async function sendContactMessage(
       );
     }
   }
-  if (names.length > 200 || message.length > 5000) {
+  if (
+    names.length > 200 ||
+    message.length > 5000 ||
+    email.length > 254 ||
+    phone.length > 40 ||
+    date.length > 20
+  ) {
     return fail(
       "Het bericht is te lang. Kort het iets in en probeer het opnieuw.",
+    );
+  }
+
+  // pas tellen als het formulier zelf klopt, anders kost één typefout een beurt
+  const { allowed } = takeToken(await visitorKey());
+  if (!allowed) {
+    return fail(
+      "Er zijn te veel berichten vanaf deze plek verstuurd. Wacht een paar minuten of mail direct naar info@jametanouk.nl.",
     );
   }
 
