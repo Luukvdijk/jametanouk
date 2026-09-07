@@ -170,7 +170,7 @@ export async function sendContactMessage(
     const token = String(formData.get("cf-turnstile-response") ?? "").trim();
     if (!token) {
       return fail(
-        "De spamcontrole kon jullie bericht niet controleren. Probeer het nog een keer.",
+        "De spamcontrole kon jullie bericht niet controleren. Probeer het nog een keer, of mail direct naar info@jametanouk.nl.",
       );
     }
     try {

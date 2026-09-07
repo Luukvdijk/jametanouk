@@ -871,6 +871,8 @@ h1 .line .rise { opacity: 1; animation: riseUp 1.35s var(--ease) both; }
 }
 
 .form-error { color: #f2a99c; font-size: 0.88rem; }
+.form-note { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+.form-note a { color: var(--rose); }
 
 /* ---- Trouwringen (laden + succes) ---- */
 .rings { width: 104px; overflow: visible; }

@@ -88,7 +88,7 @@ export default function Home() {
               <p>
                 Mijn passie voor gastvrijheid en de liefde voor het meest
                 waardevolle moment van de dag komen hier samen. Ik heb jarenlang
-                mensen ontvangen, diners{" "}
+                mensen mogen ontvangen, diners{" "}
                 <a
                   href="https://l-affetto.nl/"
                   target="_blank"

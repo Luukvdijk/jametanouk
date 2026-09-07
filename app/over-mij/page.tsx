@@ -24,7 +24,7 @@ export default function OverMij() {
             </span>
             <span className="line">
               <span className="rise r3">
-                een draaiboek. <em>Om jullie.</em>
+                een draaiboek. Maar om <em>jullie</em>.
               </span>
             </span>
           </h1>

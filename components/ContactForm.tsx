@@ -24,6 +24,8 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
     null
   );
   const [turnstileReady, setTurnstileReady] = useState(!TURNSTILE_SITE_KEY);
+  // adblockers en strenge netwerken blokkeren Cloudflare soms volledig
+  const [turnstileStuck, setTurnstileStuck] = useState(false);
   const turnstileRef = useRef<TurnstileInstance>(null);
 
   // na een fout zet React het formulier terug op de defaultValues:
@@ -34,6 +36,14 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
   const minDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(
     now.getDate()
   ).padStart(2, "0")}`;
+
+  // de knop mag nooit voorgoed op slot: laadt de spamcontrole niet, dan
+  // kan de bezoeker het na een paar tellen alsnog proberen
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || turnstileReady) return;
+    const timer = setTimeout(() => setTurnstileStuck(true), 8000);
+    return () => clearTimeout(timer);
+  }, [turnstileReady]);
 
   // na een serverfout is het captcha-token verbruikt: widget resetten
   useEffect(() => {
@@ -158,7 +168,10 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
           siteKey={TURNSTILE_SITE_KEY}
           onSuccess={() => setTurnstileReady(true)}
           onExpire={() => setTurnstileReady(false)}
-          onError={() => setTurnstileReady(false)}
+          onError={() => {
+            setTurnstileReady(false);
+            setTurnstileStuck(true);
+          }}
           options={{
             theme: "dark",
             appearance: "interaction-only",
@@ -168,13 +181,25 @@ export default function ContactForm({ defaultPakket = "" }: { defaultPakket?: st
         />
       )}
 
+      {turnstileStuck && !turnstileReady && (
+        <p className="form-note">
+          De spamcontrole wil niet laden. Probeer het bericht gerust te
+          versturen, of mail direct naar{" "}
+          <a href="mailto:info@jametanouk.nl">info@jametanouk.nl</a>.
+        </p>
+      )}
+
       {state?.error && <p className="form-error" role="alert">{state.error}</p>}
 
       <button
         type="submit"
         className="btn"
-        disabled={pending || !turnstileReady}
-        title={turnstileReady ? undefined : "De spamcontrole laadt nog even..."}
+        disabled={pending || (!turnstileReady && !turnstileStuck)}
+        title={
+          turnstileReady || turnstileStuck
+            ? undefined
+            : "De spamcontrole laadt nog even..."
+        }
       >
         {pending ? "Versturen..." : "Verstuur bericht"}
       </button>
