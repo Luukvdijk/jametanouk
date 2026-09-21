@@ -98,8 +98,8 @@ export default function Home() {
                   (L&rsquo;Affetto)
                 </a>{" "}
                 verzorgd, evenementen begeleid en sta daardoor letterlijk tussen
-                de mensen. Dat maakt mij juist interessant als
-                (zelfstandige) BABS.
+                de mensen. Dat maakt mij juist interessant als (zelfstandige)
+                BABS.
               </p>
               <p className="about-note">
                 Het is bij mij n&eacute;t even anders: na de ceremonie kan ik
@@ -270,8 +270,7 @@ export default function Home() {
             </h2>
             <p className="section-intro">
               De tarieven zijn afhankelijk van jullie wensen en de invulling van
-              de dag. Daarom werk ik met heldere pakketten, zodat jullie vooraf
-              precies weten waar jullie aan toe zijn.
+              de dag.
             </p>
           </Reveal>
           <div className="packages">
