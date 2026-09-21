@@ -6,7 +6,7 @@ import { pakketLabel } from "@/lib/pakketten";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Plan een vrijblijvende kennismaking met trouwambtenaar Anouk. Vertel iets over jullie dag en ontdek wat er mogelijk is.",
+    "Plan een kosteloze, vrijblijvende kennismaking met trouwambtenaar Anouk. Vertel over jullie dag en hoor wat er kan, in het Gooi en heel Nederland.",
   alternates: { canonical: "/contact" },
 };
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Over mij",
   description:
-    "Chef-kok, event-regisseuse en trouwambtenaar (BABS). Maak kennis met Anouk: warm, betrokken en oprecht.",
+    "Chef-kok én zelfstandig trouwambtenaar (BABS). Anouk schrijft jullie verhaal en kan na de ceremonie ook het diner koken. Warm, betrokken en oprecht.",
   alternates: { canonical: "/over-mij" },
 };
 

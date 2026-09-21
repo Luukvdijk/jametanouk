@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  // geschreven op wat stellen intypen: zelf kiezen, regio, kosteloos kennismaken
+  description:
+    "Zelf jullie trouwambtenaar kiezen? Anouk is zelfstandig BABS en ceremoniespreker in het Gooi en heel Nederland. Geen standaardverhaal. Kennismaking kosteloos.",
   alternates: { canonical: "/" },
 };
 
