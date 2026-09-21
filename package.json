@@ -5,17 +5,25 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.5.3",
     "next": "^16",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "resend": "^6.18.0"
   },
   "devDependencies": {
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5"
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.11",
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }
