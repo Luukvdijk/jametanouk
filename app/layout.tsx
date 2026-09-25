@@ -197,7 +197,7 @@ export default function RootLayout({
             <nav className="footer-nav" aria-label="Footer">
               <Link href="/">Home</Link>
               <Link href="/#werkwijze">Werkwijze</Link>
-              <Link href="/#pakketten">Kies je JA!</Link>
+              <Link href="/#kies-jullie-ja">Kies jullie JA!</Link>
               <Link href="/over-mij">Over mij</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/privacy">Privacy</Link>

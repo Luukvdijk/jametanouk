@@ -37,7 +37,7 @@ export default function NotFound() {
             </p>
             <p>
               Ga terug naar de <Link href="/">homepage</Link>,{" "}
-              <Link href="/#pakketten">kies je JA!</Link> of{" "}
+              <Link href="/#kies-jullie-ja">kies jullie JA!</Link> of{" "}
               <Link href="/contact">plan een kennismaking</Link>. Liever direct
               contact? Mail{" "}
               <a href="mailto:info@jametanouk.nl">info@jametanouk.nl</a> of bel{" "}

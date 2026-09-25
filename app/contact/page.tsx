@@ -13,10 +13,11 @@ export const metadata: Metadata = {
 export default async function Contact({
   searchParams,
 }: {
-  searchParams: Promise<{ pakket?: string }>;
+  // "keuze" in de URL, intern heet het nog steeds een pakket
+  searchParams: Promise<{ keuze?: string }>;
 }) {
-  const { pakket } = await searchParams;
-  const defaultPakket = pakket && pakketLabel(pakket) ? pakket : "";
+  const { keuze } = await searchParams;
+  const defaultPakket = keuze && pakketLabel(keuze) ? keuze : "";
   return (
     <main id="inhoud">
       <section className="page-hero">

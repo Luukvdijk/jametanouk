@@ -263,8 +263,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Kies je JA! ---- */}
-      <section className="section packages-section" id="pakketten">
+      {/* ---- Kies jullie JA! ---- */}
+      <section className="section packages-section" id="kies-jullie-ja">
         <div className="container">
           <Reveal className="section-head">
             <p className="label">De mogelijkheden</p>
@@ -288,7 +288,7 @@ export default function Home() {
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
               <Link
-                href="/contact?pakket=officieel-trouwen"
+                href="/contact?keuze=officieel-trouwen"
                 className="arrow-link"
               >
                 Vraag tarieven aan
@@ -306,7 +306,7 @@ export default function Home() {
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
               <Link
-                href="/contact?pakket=ceremonie-op-maat"
+                href="/contact?keuze=ceremonie-op-maat"
                 className="arrow-link"
               >
                 Vraag tarieven aan
@@ -325,7 +325,7 @@ export default function Home() {
                 </li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact?pakket=ja-diner" className="arrow-link">
+              <Link href="/contact?keuze=ja-diner" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>
@@ -361,7 +361,7 @@ export default function Home() {
               >
                 Ontdek L&rsquo;Affetto
               </a>
-              <a href="#pakketten" className="arrow-link arrow-link-muted">
+              <a href="#kies-jullie-ja" className="arrow-link arrow-link-muted">
                 Bekijk JA! &amp; Diner met Anouk
               </a>
             </Reveal>
