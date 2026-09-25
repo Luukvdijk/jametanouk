@@ -50,7 +50,8 @@ export default function Privacy() {
               <p>
                 Via het contactformulier op deze website verwerk ik de gegevens die jullie
                 zelf invullen: jullie namen, e-mailadres, telefoonnummer (optioneel),
-                trouwdatum (optioneel), pakketvoorkeur en jullie bericht. Nemen jullie direct
+                trouwdatum (optioneel), waar jullie interesse naar uitgaat en jullie
+                bericht. Nemen jullie direct
                 contact op via e-mail of telefoon, dan verwerk ik de gegevens die jullie
                 daarbij delen.
               </p>

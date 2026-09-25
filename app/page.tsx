@@ -263,11 +263,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Pakketten ---- */}
+      {/* ---- Kies je JA! ---- */}
       <section className="section packages-section" id="pakketten">
         <div className="container">
           <Reveal className="section-head">
-            <p className="label">Pakketten</p>
+            <p className="label">De mogelijkheden</p>
             <h2>
               Kies jullie <em>JA!</em>
             </h2>
@@ -362,7 +362,7 @@ export default function Home() {
                 Ontdek L&rsquo;Affetto
               </a>
               <a href="#pakketten" className="arrow-link arrow-link-muted">
-                Bekijk het JA! &amp; Diner pakket
+                Bekijk JA! &amp; Diner met Anouk
               </a>
             </Reveal>
           </div>
