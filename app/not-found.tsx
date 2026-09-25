@@ -36,8 +36,8 @@ export default function NotFound() {
               is er een tikfout in het adres geslopen.
             </p>
             <p>
-              Ga terug naar de <Link href="/">homepage</Link>, bekijk de{" "}
-              <Link href="/#pakketten">pakketten</Link> of{" "}
+              Ga terug naar de <Link href="/">homepage</Link>,{" "}
+              <Link href="/#kies-jullie-ja">kies jullie JA!</Link> of{" "}
               <Link href="/contact">plan een kennismaking</Link>. Liever direct
               contact? Mail{" "}
               <a href="mailto:info@jametanouk.nl">info@jametanouk.nl</a> of bel{" "}

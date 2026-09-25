@@ -75,7 +75,19 @@ const jsonLd = {
         propertyID: "KVK",
         value: "63510898",
       },
-      areaServed: "Nederland",
+      /* Anouk werkt door heel Nederland maar zit in het Gooi; die plaatsen
+         staan er apart bij omdat stellen op "trouwambtenaar <plaats>" zoeken */
+      areaServed: [
+        { "@type": "Country", name: "Nederland" },
+        { "@type": "AdministrativeArea", name: "Het Gooi" },
+        { "@type": "City", name: "Bussum" },
+        { "@type": "City", name: "Naarden" },
+        { "@type": "City", name: "Hilversum" },
+        { "@type": "City", name: "Laren" },
+        { "@type": "City", name: "Blaricum" },
+        { "@type": "City", name: "Huizen" },
+        { "@type": "City", name: "Weesp" },
+      ],
       founder: { "@id": "https://www.jametanouk.nl/#anouk" },
       employee: { "@id": "https://www.jametanouk.nl/#anouk" },
       sameAs: [
@@ -122,11 +134,17 @@ const jsonLd = {
       url: "https://www.jametanouk.nl/over-mij",
       image: "https://www.jametanouk.nl/images/anouk.jpg",
       worksFor: { "@id": "https://www.jametanouk.nl/#business" },
+      /* geformuleerd zoals stellen het zelf opzoeken, niet in vaktermen */
       knowsAbout: [
-        "Huwelijksceremonie",
-        "Trouwambtenaar (BABS)",
+        "Persoonlijke huwelijksceremonie",
+        "Zelfstandig trouwambtenaar (BABS)",
         "Ceremoniespreker",
+        "Benoeming tot trouwambtenaar voor één dag",
+        "Trouwen op een eigen locatie",
         "Symbolische ceremonie",
+        "Geregistreerd partnerschap",
+        "Herbevestiging van geloften",
+        "Bruiloft in het buitenland",
         "Dagcoördinatie",
         "Culinaire beleving",
       ],
@@ -179,7 +197,7 @@ export default function RootLayout({
             <nav className="footer-nav" aria-label="Footer">
               <Link href="/">Home</Link>
               <Link href="/#werkwijze">Werkwijze</Link>
-              <Link href="/#pakketten">Pakketten</Link>
+              <Link href="/#kies-jullie-ja">Kies jullie JA!</Link>
               <Link href="/over-mij">Over mij</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/privacy">Privacy</Link>

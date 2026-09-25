@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  // geschreven op wat stellen intypen: zelf kiezen, regio, kosteloos kennismaken
+  description:
+    "Zelf jullie trouwambtenaar kiezen? Anouk is zelfstandig BABS en ceremoniespreker in het Gooi en heel Nederland. Geen standaardverhaal. Kennismaking kosteloos.",
   alternates: { canonical: "/" },
 };
 
@@ -260,11 +263,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---- Pakketten ---- */}
-      <section className="section packages-section" id="pakketten">
+      {/* ---- Kies jullie JA! ---- */}
+      <section className="section packages-section" id="kies-jullie-ja">
         <div className="container">
           <Reveal className="section-head">
-            <p className="label">Pakketten</p>
+            <p className="label">De mogelijkheden</p>
             <h2>
               Kies jullie <em>JA!</em>
             </h2>
@@ -285,7 +288,7 @@ export default function Home() {
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
               <Link
-                href="/contact?pakket=officieel-trouwen"
+                href="/contact?keuze=officieel-trouwen"
                 className="arrow-link"
               >
                 Vraag tarieven aan
@@ -303,7 +306,7 @@ export default function Home() {
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
               <Link
-                href="/contact?pakket=ceremonie-op-maat"
+                href="/contact?keuze=ceremonie-op-maat"
                 className="arrow-link"
               >
                 Vraag tarieven aan
@@ -322,7 +325,7 @@ export default function Home() {
                 </li>
               </ul>
               <p className="package-price">Tarief op aanvraag</p>
-              <Link href="/contact?pakket=ja-diner" className="arrow-link">
+              <Link href="/contact?keuze=ja-diner" className="arrow-link">
                 Vraag tarieven aan
               </Link>
             </Reveal>
@@ -358,8 +361,8 @@ export default function Home() {
               >
                 Ontdek L&rsquo;Affetto
               </a>
-              <a href="#pakketten" className="arrow-link arrow-link-muted">
-                Bekijk het JA! &amp; Diner pakket
+              <a href="#kies-jullie-ja" className="arrow-link arrow-link-muted">
+                Bekijk JA! &amp; Diner met Anouk
               </a>
             </Reveal>
           </div>

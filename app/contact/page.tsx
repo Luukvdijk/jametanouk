@@ -6,17 +6,18 @@ import { pakketLabel } from "@/lib/pakketten";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Plan een vrijblijvende kennismaking met trouwambtenaar Anouk. Vertel iets over jullie dag en ontdek wat er mogelijk is.",
+    "Plan een kosteloze, vrijblijvende kennismaking met trouwambtenaar Anouk. Vertel over jullie dag en hoor wat er kan, in het Gooi en heel Nederland.",
   alternates: { canonical: "/contact" },
 };
 
 export default async function Contact({
   searchParams,
 }: {
-  searchParams: Promise<{ pakket?: string }>;
+  // "keuze" in de URL, intern heet het nog steeds een pakket
+  searchParams: Promise<{ keuze?: string }>;
 }) {
-  const { pakket } = await searchParams;
-  const defaultPakket = pakket && pakketLabel(pakket) ? pakket : "";
+  const { keuze } = await searchParams;
+  const defaultPakket = keuze && pakketLabel(keuze) ? keuze : "";
   return (
     <main id="inhoud">
       <section className="page-hero">
