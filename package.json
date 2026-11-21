@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^1.5.3",
-    "next": "^16",
+    "next": "^16.4.6",
     "react": "^19",
     "react-dom": "^19",
     "resend": "^6.18.0"
@@ -22,9 +22,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.2.11",
+    "eslint-config-next": "^16.4.6",
     "typescript": "^5",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.12"
   },
   "overrides": {
     "vite": "8.1.7"
